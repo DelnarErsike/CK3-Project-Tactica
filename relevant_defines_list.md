@@ -1,22 +1,29 @@
 # NGame
 
+```
 COMBAT_TICK_LIMIT = 1
+```
 
 # NCharacter
 
+```
 RANDOM_CHARACTER_PROWESS_MIN = 0
 RANDOM_CHARACTER_PROWESS_MAX = 10
+```
 
 # NOldAge
 
+```
 LOWER_PROWESS_START_AGE = 45 					// At this age characters start getting the chance to lose prowess each year
 LOWER_PROWESS_BASE_CHANCE = 0.1					// This is the base chance of losing prowess at the START_AGE
 LOWER_PROWESS_YEARLY_INCREASE = 0.015			// This is the yearly increase of the chance to lose prowess
 LOWER_PROWESS_MAX_CHANCE = 0.75					// This is the maximum chance to lose prowess
 LOWER_PROWESS_FACTOR = 0.1						// This is the prowess change mutliplier on each failed yearly roll
+```
 
 # NCharacterOpinion
 
+```
 // The offensive war opinion penalty is applied to all direct vassals
 // It ticks up if you lead an offensive war that isn't a Great Holy War or a civil war
 OFFENSIVE_WAR_PENALTY_GRACE_PERIOD = 6			// How many months do you need to be at war before you start getting the offensive war opinion penalty? If you've already got the penalty, the grace period is ignored (E.G., if you go to war for a few years, are at peace for a few months, then go to war again it will immediately start ticking up)
@@ -25,9 +32,11 @@ OFFENSIVE_WAR_PENALTY_DECAY_PER_MONTH = 0.5		// How much of a penalty decays eac
 AT_PEACE_PENALTY_GRACE_PERIOD = 6				// How many months do you need to be at peace before you start getting the at peace opinion penalty? If you've already got the penalty, the grace period is ignored
 AT_PEACE_PENALTY_PER_MONTH = 0.5				// How much of a penalty gets added each month?
 AT_PEACE_PENALTY_CAP = 30						// The penalty will be capped to this value (the opinion will be at worst -AT_PEACE_PENALTY_CAP)
+```
 
 # NCombat
 
+```
 UNRAISED_LEVY_REGIMENTS_SPEED = 40.0			// How many distance units do unraised regiments travel per day when gathering
 COMBAT_ROLL_DAYS = 3							// How many days are there between rolls?
 COMBAT_EVENT_DAYS = 5							// How many days are there between knight events?
@@ -61,9 +70,11 @@ DISEMBARK_PENALTY_DAYS = 30						// How long does an army have a penalty after d
 KNIGHT_DAMAGE_PER_PROWESS = 100					// How much "Damage" stat does a knight get per prowess?
 KNIGHT_TOUGHNESS_PER_PROWESS = 10				// How much "Toughness" stat does a knight get per prowess?
 COMBAT_RESULT_MONTHS_TO_TIMEOUT = 12			// Combat results timeout after this many months
+```
 
 # NArmy
 
+```
 MOVEMENT_SPEED_RETREAT = 4.5					// Movement speed while retreating
 MOVEMENT_SPEED = 3								// Normal movement speed
 MOVEMENT_SPEED_BONUS_FRIENDLY_AREA = 0.2		// In friendly areas you get a 20% speed bonus
@@ -90,40 +101,40 @@ SUPPLY_OWN_REALM = 0.15							// Extra supply within top realm
 SUPPLY_OWN_SUB_REALM = 0.3						// Extra supply within subrealm
 MINIMUM_SUPPLY_LIMIT = 1000						// Supply limit will never ever be lower than this
 NO_SUPPLY_LOSS_DAYS = 30						// After gathering, armies won't lose supplies for this number of days
-
 SUPPLY_STATE_LEVELS = {
 	60
 	10
 	0
 }
-
 SUPPLY_STATE_NAMES = {
 	"SUPPLY_STATE_0"
 	"SUPPLY_STATE_1"
 	"SUPPLY_STATE_2"
 }
-
 SUPPLY_STATE_ATTRITION = {
 	0.0
 	0.0
 	0.05
 }
-
 MAA_PRESTIGE_BUY_COST_MULT = 2					// If using prestige as gold for MaA, multiply buy cost by this
 MAA_PRESTIGE_LOW_COST_MULT = 0.7				// If using prestige as gold for MaA, multiply basic maintenance cost by this
 MAA_PRESTIGE_HIGH_COST_MULT = 0.7				// If using prestige as gold for MaA, multiply raised/reinforce cost by this
 REGIMENT_MAX_SIZE = 1000						// The game will avoid making regiments larger than this. Can still happen if a province provides more levies than the cap
 REGIMENT_MAX_SIZE_PERCENT = 0.2					//  The game will avoid making regiments larger than this compared to the max troops you can raise
+```
 
 # NFleet
 
+```
 FLEET_SPEED = 15								// Fleet speed
 EMBARK_GOLD_COST_PER_HUNDRED = 1				// Embark cost for every hundred units
 GOLD_COST_MAINTENANCE_MULT = 0.25				// Increase in the gold maintenance for armies that are embarked
 ATTRITION_AFTER_DAYS = 30						// After embarking the army can expend this time without getting attrition
+```
 
 # NRetreat
 
+```
 SHATTERED_RETREAT_PREFERRED_PROVINCES = 7
 SHATTERED_RETREAT_MAX_PREFERRED_OFFSET_PENALTY = 7
 SHATTERED_RETREAT_OWN_REALM = 340
@@ -141,9 +152,11 @@ SHATTERED_RETREAT_NEIGHBOUR_UNIT_MULTIPLIER = 0.5
 SHATTERED_RETREAT_OWN_UNIT_MULTIPLIER = 0.05
 SHATTERED_RETREAT_ENEMY_UNIT_MULTIPLIER = -0.2
 SHATTERED_RETREAT_DISTANCE_FROM_CAPITAL = -0.01
+```
 
 # NWar
 
+```
 ATTACKER_TICKING_WAR_SCORE = 0.055				// Default ticking war score per day for attackers. Can be overwritten by CB. Set to 0 to disable
 ATTACKER_TICKING_WAR_SCORE_DELAY_DAYS = 0		// Default delay in days before applying ticking war score for attackers. Can be overwritten by CB
 DEFENDER_TICKING_WAR_SCORE = 0.055				// Default ticking war score per day for defenders. Can be overwritten by CB. Set to 0 to disable
@@ -163,18 +176,22 @@ OCCUPATION_WAR_CONTRIBUTION_MONTHLY = 2			// War contribution from monthly occup
 OCCUPATION_SCORE_PER_BARONY_SCALE = 0.04		// Extra occupation score (before scaling) from each individual barony. 0.01 is equivalent to 1% per barony. So 10 baronies occupied out of 20 total, would mean 50% + 10% = 60% occupation score (before scaling)
 MINIMUM_CONTRIBUTION_FOR_REWARD = 100			// You need at least this amount of contribution points in order to get a reward
 WAR_RESULT_MONTHS_TO_TIMEOUT = 12				// War results time out after this many months
+```
 
 # NReligion
 
+```
 HOSTILITY_COMBAT_MOD_MULT = {					// Multiplier to how big of an effect tolerance_advantage_mod has. The higher it is, the greater the effect
 	0
 	0
 	0.005
 	0.01
 }
+```
 
 # NSiege
 
+```
 ACTIONS_TO_REMEMBER = 4								// How many previous siege actions are remembered
 ACTION_WEIGHTS = {									// How likely are the the actions to be picked. The probability is given by the ratio of the weights.
 	40		// breach
@@ -221,16 +238,25 @@ SIEGE_FORT_THRESHOLDS = {							// At what levels is another level of siege tier
 SIEGE_FORT_THRESHOLD_IMPACT = 0.6					// What is the impact of not having enough siege tier? Siege speed is multiplied for this for each missing tier. E.G., if siege tier is 0, and fort level is 4, siege speed is multiplied by 0.5 \* 0.5
 SIEGE_LOOOT_MULTIPLIER = 40							// The income of the holding multiplied by this number is how much loot the besieging army will get for occupying it.
 DEFENDER_OVERESTIMATION_FOR_SPLIT = 1.5				// Multiply number of defenders with this when splitting of a siege army to account for troops lost by the attacker to attrition during the remainder of the siege
+```
 
 # NProvince
+
+```
 BASE_SUPPLY_LIMIT = 2000						// The unmodified base supply limit of a province
 SUPPLY_PER_DEVELOPMENT = 150					// Each development adds this much sto the supply limit
+```
 
 # NPathFinding
+
+```
 EMBARK_COST = 30								// This value will be set as pathfinding cost if it goes from land to sea
 DISEMBARK_COST = 10								// This value will be set as pathfinding cost if it goes from sea to land
+```
 
 # NMercenary
+
+```
 LEVELS = { 0 7 14 }								// Defines how many different sizes of mercenary companies are there and how many are spawned for a given culture. The numbers correspond to numbers of counties of the culture. No company exists if the number is lower than the first value specified here.
 HIRE_RANGE = 500								// The maximum distance of mercenaries that can be hired (capital to mercenary location)
 LEVIES = { 400 800 1200 }						// The base numbers of levies for levels of mercenary bands
@@ -244,9 +270,11 @@ MAA_COST_RATIO = 0.5							// The cost of the MAA regiments of mercenary compani
 ALLOWED_DEBT_MONTHS = 24						// How many months of monthly income in dept are characters allowed to have before being blocked from hiring mercenaries
 REINFORCEMENT_FACTOR = 3.0						// How much faster do mercenary regiments reinforce than regular regiments
 COUNTY_REMOVAL_FACTOR = 1.2						// When removing mercenaries from shrinking cultures, first multiply culture size with this
+```
 
 # NHolyOrder
 
+```
 // In addition to the holding levies, a holy order has levies according to this formula: NUM_LEVIES_BASE + <num holdings> \* NUM_LEVIES_PER_HOLDING
 NUM_LEVIES_BASE = 500
 NUM_LEVIES_PER_HOLDING = 200
@@ -261,14 +289,18 @@ HIRE_LIMIT = 1									// One character can hire up to this many holy orders. Se
 ENEMY_MIN_HOSTILITY_LEVEL = 2					// Must be at war with someone with at least this hostility level to be able to hire holy orders. Once hired hey can be used against all enemies, though.
 BASE_NUM_KNIGHTS = 2							// How many knights do holy orders have?
 EXTRA_KNIGHTS_PER_HOLDING = 0.5					// How many knights do holy orders get for each holding? Rounds down
+```
 
 # NPlayer
 
+```
 RALLY_POINT_LIMIT = 10								// Rally point number limit for players
 MIN_PATH_COST_SAVINGS_TO_CONSIDER_WATER_PATH = 45	// Number of travel days saved before right-clicking considers going through water instead
+```
 
 # NRaid
 
+```
 RAID_LOOT_PER_SOLDIER = 0.1				// How much loot can a single soldier carry? Minimum increment is 0.001
 MIN_SOLDIERS_TO_RAID = 200				// How small can a raid army be and still be able to loot?
 MONTHLY_ATTRITION = 0.01				// How much attrition do you take while looting a province? 0.01 = 1% per month
@@ -282,9 +314,11 @@ DIFFICULTY_PER_COUNTY_FORT_LEVEL = 250	// How much progress is needed per fort l
 DAYS_OF_HOSTILITY = 180					// How long after raiding do hostilities last?
 DAYS_OF_IMMUNITY = 1825					// How long does raid immunity after defeating a raid army last?
 RAID_REALM_AI_COOLDOWN = 1				// How many years the AI should wait before considering raiding again, after any AI raiders have been defeated previously
+```
 
 # NAI
 
+```
 MIN_WAR_CHEST = {											// The desired war chest will always be at least this much money, by tier
 	25
 	25
@@ -388,9 +422,11 @@ MIN_GOALS_PER_STACK = 5										// However, it will ensure it always evaluates 
 MIN_SUPPLY_COMPARED_TO_AVERAGE_SUPPLY_FACTOR = 0.7			// For the purpose of army sizes, the AI uses the highest of this factor times the average supply in the war area, and the lowest supply in the war area. E.G., if average supply is 2k, and lowest supply is 1k, the AI will act as if available supply is 0.7 * 2k = 1.4k. But if the lowest supply was 1.5k, it'd be using that instead
 RESUPPLY_MAX_DISTANCE = 3									// How far out can splinters of the army spread when trying to resupply? In // of provinces. AI will try to keep it lower if possible
 RESUPPLY_COOLDOWN_DAYS = 250								// If supplying is interrupted due to insufficient supply, wait for this long before trying to resupply again
+```
 
 # NCombatInterface
 
+```
 COMBAT_BALANCE_UNDECIDED_ZONE = 0.1					// If the balance of the combat is within this range around 50% (0.5) the prediction is considered undecided
 COMBAT_BALANCE_DIRECTION_STEPS = 3					// How many steps should the combat balance progress direction indicator have
 COMBAT_BALANCE_STEP_CHANGE = 10						// Balance change needed for increasing the steps of the indicator by one
@@ -402,9 +438,11 @@ UNIT_QUALITY_THRESHOLDS = {							// If damage + toughness per man is at least t
 }
 MAX_COMBAT_PREDICTION_DISTANCE = 5					// How far along the path of your units should we bother to look? Higher means we can predict combat further away, but the situation is more likely to change before combat occurs
 BATTLE_EVENT_DURATION = 5.0							// How many seconds do battle events stick around for?
+```
 
 # NCombatPrediction
 
+```
 COMBAT_PREDICTION_ADVANTAGE_ROUNDS = 5				// How many rounds of the advantage are added to the starting advanatage when predicting the combat result
 EDGE_COMMANDER_MARTIAL_THRESHOLD = 3				// Commanders' martial skill difference needs to be at least this for it to be counted as an edge
 EDGE_COMMANDER_TRAITS_THRESHOLD = 1					// Commanders' number of commander traits skill difference needs to be at least this for it to be counted as an edge
@@ -413,3 +451,4 @@ EDGE_QUALITY_THRESHOLD = 1.25						// Quality ratio needs to be at least this fo
 EDGE_COUNTER_RATIO_THRESHOLD = 1.25					// Total MAA counters need to be at least this for it to be counted as an edge
 EDGE_FORTIFICATION_THRESHOLD = 20					// Fortification needs to be at least this for it to be counted as an edge
 COMBAT_PREDICTION_LEVELS = { 0.4 0.5 0.7 0.9 }		// Prediction levels thresholds
+```

@@ -1,12 +1,16 @@
 # Culture Era-Specific Entries
 
-unlock_maa = key			# key of a regiment that can be unlocked. There can be more than one. This is only to show on the tooltip, it has to be manually blocked on the object itself.
+```
+unlock_maa = key			// key of a regiment that can be unlocked. There can be more than one. This is only to show on the tooltip, it has to be manually blocked on the object itself.
+```
 
 # Innovation-Specific Entries
 
-unlock_maa = key			# key of a regiment that can be unlocked. There can be more than one. Actually does unlock the MaA.
+```
+unlock_maa = key			// key of a regiment that can be unlocked. There can be more than one. Actually does unlock the MaA.
+
 maa_upgrade = {
-	type = heavy_cavalry 			# The base MaA type to upgrade
+	type = heavy_cavalry 	// The base MaA type to upgrade
 	damage = 0.1
 	toughness = 0.1
 	pursue = 0.1
@@ -14,24 +18,30 @@ maa_upgrade = {
 	siege_value = 0.1
 	max_size = 1
 }
+```
 
 # Province Modifiers
 
+```
 supply_limit_mult
 supply_limit
 hostile_raid_time
 supply_capacity_add
 supply_capacity_mult
+```
 
 # Holding Modifiers
 
+```
 fort_level
 garrison_size
+```
 
 # Combat Modifiers
 
 ## Logistical Modifiers
 
+```
 men_at_arms_limit
 men_at_arms_cap
 embarkation_cost_mult
@@ -40,9 +50,11 @@ movement_speed
 raid_speed
 hostile_county_attrition
 supply_duration
+```
 
 ## Advantage Modifiers
 
+```
 advantage
 attacker_advantage
 defender_advantage
@@ -52,9 +64,11 @@ advantage_against_coreligionists
 random_advantage
 controlled_province_advantage
 no_water_crossing_penalty
+```
 
 ## Combat Stat Modifiers
 
+```
 pursue_efficiency
 counter_efficiency
 min_combat_roll
@@ -62,9 +76,11 @@ max_combat_roll
 retreat_losses
 hard_casualty_modifier
 enemy_hard_casualty_modifier
+```
 
 ## Terrain Modifiers
 
+```
 plains_attrition_mult
 plains_cancel_negative_supply
 plains_advantage
@@ -148,18 +164,22 @@ drylands_cancel_negative_supply
 drylands_advantage
 drylands_min_combat_roll
 drylands_max_combat_roll
+```
 
 # Siege Modifiers
 
+```
 siege_phase_time
 siege_morale_loss
 revolting_siege_morale_loss_add
 revolting_siege_morale_loss_mult
+```
 
 # Character Modifiers:
 
 ## Unit Stat Modifiers:
 
+```
 heavy_infantry_max_size_add
 heavy_infantry_max_size_mult
 heavy_infantry_siege_value_add
@@ -250,9 +270,11 @@ siege_weapon_pursuit_add
 siege_weapon_pursuit_mult
 siege_weapon_screen_add
 siege_weapon_screen_mult
+```
 
 ## Logistical Modifiers
 
+```
 men_at_arms_maintenance
 men_at_arms_maintenance_per_dread_mult
 army_maintenance_mult
@@ -266,9 +288,11 @@ same_culture_holy_order_hire_cost_mult
 same_culture_holy_order_hire_cost_add
 monthly_war_income_add
 monthly_war_income_mult
+```
 
 ## Knight and Prowess Modifiers
 
+```
 knight_limit
 knight_effectiveness_mult
 monthly_piety_gain_per_knight_add
@@ -283,7 +307,10 @@ prowess_per_prestige_level
 prowess_per_stress_level
 prowess_scheme_power
 prowess_scheme_resistance
+```
 
 # Misc. Modifiers
 
+```
 mercenary_count_mult
+```
