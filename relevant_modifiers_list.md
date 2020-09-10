@@ -94,6 +94,7 @@ desert_cancel_negative_supply
 desert_advantage
 desert_min_combat_roll
 desert_max_combat_roll
+
 desert_mountains_attrition_mult
 desert_mountains_cancel_negative_supply
 desert_mountains_advantage
