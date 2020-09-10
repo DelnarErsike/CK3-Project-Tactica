@@ -1,0 +1,49 @@
+key = {
+	type = type_name	# Base type for regiment. Can be one of: skirmishers, archers, light_cavalry, pikemen, heavy_infantry, heavy_cavalry, siege_weapon
+
+	icon = name			# Optional, use this name instead of the key when selecting icon graphics
+	can_recruit = no 	# If set, can't be recruited. For use by mercs/holy orders instead
+	
+
+	pursuit = 10		# Damage dealt in pursuit phase if on winning side
+	screen = 10			# Damage mitigated in pursuit phase if on losing side
+	damage = 50			# Damage dealt
+	toughness = 40		# Ability to absorb damage
+	siege_value = 0.1	# How much it contributes to sieges
+
+	fights_in_main_phase = no	# If set, only affects the pursuit phase. Handy for siege weapons
+	siege_tier = 1				# How good it is at countering forts
+
+	# Costs. Support gold, prestige, and piety
+	buy_cost = { gold = 0 prestige = 0 piety = 0 }
+	low_maintenance_cost = { gold = 2 }		# Maintenance paid when the regiment is unraised and fully reinforced or when reinforcement is disabled
+	high_maintenance_cost = { gold = 10 }	# Maintenance paid when the regiment is raised or not fully reinforced
+	
+	# Terrain bonuses pursuit, siege_value, etc.
+	terrain_bonus = {
+		plains = { damage = 10 }
+	}
+	
+	# What archetypes it counters, and how much. The number is how many sub-regiments it counters per sub-regiment
+	counters = {
+		pikemen = 1
+		archers = 1
+	}
+	
+	# Can mercenaries and holy orders use this regiment as a fallback regiment type (what are fallback regiments?)
+	mercenary_fallback = yes
+	holy_order_fallback = yes
+	
+	# Maximum number of sub-regiments, overriding any settings for sub-regiment count
+	max_sub_regiments = 1
+
+	# Size of one sub-regiment
+	stack = 100
+	# Icon that regiment should use. If none is defined, the game will either use the icon with a name that is identical to the regiment's key, or it will use the default icon if there is no icon that matches the regiment's key.
+	# Possible choices include all icon names in NGameIcons.REGIMENTYPE_ICON_PATH, which is usually gfx/interface/icons/regimenttypes
+	icon = skirmishers
+	# Whether mercenaries and holy orders can use this regiment type
+	allowed_in_hired_troops = yes
+
+	ai_quality = { ... }	# Script value in character scope. Used in addition to a quality calculation (based on TOUGHNESS_SCORE_MULT, etc.) to figure out what the AI should buy/disband
+}
