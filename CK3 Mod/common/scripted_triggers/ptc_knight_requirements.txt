@@ -1,0 +1,23 @@
+﻿can_be_knight_trigger = {
+	can_be_warrior_trigger = { ARMY_OWNER = $ARMY_OWNER$ }
+	NOR = {
+		AND = {
+			has_trait = devoted
+			faith = {
+				NOT = {
+					has_doctrine_parameter = clergy_can_fight
+				}
+			}
+		}
+		AND = {
+			is_clergy = yes
+			faith = {
+				NOT = {
+					has_doctrine_parameter = clergy_can_fight
+				}
+			}
+		}
+	}
+	is_ai = yes
+	prowess > average_skill_rating # Knight needs to have higher-than-average Prowess (by default, this is 8)
+}
