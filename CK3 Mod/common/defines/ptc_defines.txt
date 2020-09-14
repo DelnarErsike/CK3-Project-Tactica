@@ -24,17 +24,17 @@ NArmy = {
 ## Levy stats
 #
 
-#	GOLD_COST_PER_SOLDIER = 0.15	# Vanilla = 0.0033. While levies will get disabled in the mod, it's still worth dialing up their maintenance costs in case of any mods that might need them and/or in case we can't eliminate them completely. This cost is now in line with 1/3 Skirmisher MaA costs.
+	GOLD_COST_PER_SOLDIER = 0.01	# Vanilla = 0.0033. While levies will get disabled in the mod, it's still worth dialing up their maintenance costs in case of any mods that might need them and/or in case we can't eliminate them completely. This cost is now in line with 1/3 Skirmisher MaA costs.
 
 #
 ## Men-at-Arms stats
 #
 
-#	REGIMENT_DEFAULT_STACK_SIZE = 25			# Vanilla = 100. 25 makes it easier to tweak numbers with holding buildings.
-#	REGIMENT_DEFAULT_MAX_SIZE = 4 				# Vanilla = 3. This makes the default value of a MaA slot = 100 soldiers.
-#	REGIMENT_MAA_CAP_BY_TIER = { 0 0 0 0 0 0 }	# Vanilla = { 0 1 2 3 4 5 }. The entire army being handled through MaA means free MaA slots must no longer be a thing.
-#	REGIMENT_MAA_EXTRA_BY_CAP = 0.25			# Vanilla = 0.2. Needs to a bit higher because dipping below the cap would be much easier.
-#	REGIMENT_MAA_STARTING_COUNT = 25			# Vanilla = 5. First stack starts completely filled. Being able to cheese this to get free MaA quickly if you've run out is intended because of the massive gold cost involved; you might as well hire mercenaries instead.
+	REGIMENT_DEFAULT_STACK_SIZE = 25			# Vanilla = 100. 25 makes it easier to tweak numbers with holding buildings.
+	REGIMENT_DEFAULT_MAX_SIZE = 4 				# Vanilla = 3. This makes the default value of a MaA slot = 100 soldiers.
+	REGIMENT_MAA_CAP_BY_TIER = { 0 0 0 0 0 0 }	# Vanilla = { 0 1 2 3 4 5 }. The entire army being handled through MaA means free MaA slots must no longer be a thing.
+	REGIMENT_MAA_EXTRA_BY_CAP = 0.25			# Vanilla = 0.2. Needs to a bit higher because dipping below the cap would be much easier.
+	REGIMENT_MAA_STARTING_COUNT = 25			# Vanilla = 5. First stack starts completely filled. Being able to cheese this to get free MaA quickly if you've run out is intended because of the massive gold cost involved; you might as well hire mercenaries instead.
 }
 
 #
@@ -51,12 +51,12 @@ NCombat = {
 #
 
 NMercenary = {
-#	LEVIES = { 0 0 0 }						# Vanilla = { 400 800 1200 }. No more levies!
-#	MAA_REGIMENTS = { 7 14 21 } 			# Vanilla = { 1 2 3 }. All levies are men-at-arms now, so together with MAA_REGIMENT_SIZES, this keeps merc sizes roughly the same as in vanilla.
+	LEVIES = { 0 0 0 }						# Vanilla = { 400 800 1200 }. No more levies!
+	MAA_REGIMENTS = { 7 14 21 } 			# Vanilla = { 1 2 3 }. All levies are men-at-arms now, so together with MAA_REGIMENT_SIZES, this keeps merc sizes roughly the same as in vanilla.
 	NUM_KNIGHTS = { 2 4 6 } 				# Vanilla = { 2 3 4 }. Knight count now grows at the same rate as men-at-arms count.
-#	MAA_REGIMENT_SIZES = { 100 100 100 }	# Vanilla = { 300 300 300 }. Standardized to keep things easy to calculate.
-#	LEVY_COST_PER_100_SOLDIERS = 30			# Vanilla = 12. Parity with GOLD_COST_PER_SOLDIER and MAA_COST_RATIO.
-#	MAA_COST_RATIO = 2.0					# Vanilla = 0.5. MaA costs being less on the up-front side and more on the reinforce side means this can be raised.
+	MAA_REGIMENT_SIZES = { 100 100 100 }	# Vanilla = { 300 300 300 }. Standardized to keep things easy to calculate.
+	LEVY_COST_PER_100_SOLDIERS = 24			# Vanilla = 12. Parity with light_infantry_recruitment_cost and MAA_COST_RATIO.
+	MAA_COST_RATIO = 2.0					# Vanilla = 0.5. MaA costs being less on the up-front side and more on the reinforce side means this can be raised.
 	ALLOWED_DEBT_MONTHS = 3					# Vanilla = 24. 3 months in debt allows for a minor amount of leeway (more than e.g. 1 month), but we still don't want people to hire mercs easily if they don't have enough gold.
 	REINFORCEMENT_FACTOR = 2.0				# Vanilla = 3.0. Makes merc reinforce rates be equal to CK2 retinues' at highest cost setting.
 }
@@ -66,13 +66,13 @@ NMercenary = {
 #
 
 NHolyOrder = {
-#	NUM_LEVIES_BASE = 0					# Vanilla = 500. No more levies!
-#	NUM_LEVIES_PER_HOLDING = 0			# Vanilla = 200. No more levies!
-#	NUM_MAA_BASE = 700					# Vanilla = 200. Compensates for NUM_LEVIES_BASE setting.
-#	NUM_MAA_PER_HOLDING = 300			# Vanilla = 100. Compensates for NUM_LEVIES_PER_HOLDING setting.
-#	RELIGION_MAA_RATIO = 0.3			# Vanilla = 0.7. Compensates for NUM_LEVIES_BASE setting.
-#	LEVY_COST_PER_100_SOLDIERS = 7.5	# Vanilla = 5.0. Parity with GOLD_COST_PER_SOLDIER and MAA_COST_RATIO.
-#	MAA_COST_RATIO = 0.5				# Vanilla = 0.2. MaA costs being less on the up-front side and more on the reinforce side means this can be raised.
+	NUM_LEVIES_BASE = 0					# Vanilla = 500. No more levies!
+	NUM_LEVIES_PER_HOLDING = 0			# Vanilla = 200. No more levies!
+	NUM_MAA_BASE = 700					# Vanilla = 200. Compensates for NUM_LEVIES_BASE setting.
+	NUM_MAA_PER_HOLDING = 300			# Vanilla = 100. Compensates for NUM_LEVIES_PER_HOLDING setting.
+	RELIGION_MAA_RATIO = 0.3			# Vanilla = 0.7. Compensates for NUM_LEVIES_BASE setting.
+	LEVY_COST_PER_100_SOLDIERS = 6		# Vanilla = 5.0. Parity with light_infantry_recruitment_cost and MAA_COST_RATIO.
+	MAA_COST_RATIO = 0.5				# Vanilla = 0.2. MaA costs being less on the up-front side and more on the reinforce side means this can be raised.
 	PATRON_HIRE_COST_MULT = 0.2			# Vanilla = 0. Prevents troops from being *completely* free, which would be highly abusable.
 }
 

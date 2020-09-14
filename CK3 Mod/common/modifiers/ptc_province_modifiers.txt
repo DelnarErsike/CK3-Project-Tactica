@@ -1,0 +1,12 @@
+﻿independent_realm_capital_province_modifier = {
+	garrison_size = 0.4
+}
+
+# Duke or greater
+high_tier_vassal_capital_province_modifier = {
+	garrison_size = 0.2
+}
+
+capital_duchy_province_modifier = {
+	garrison_size = 0.2
+}

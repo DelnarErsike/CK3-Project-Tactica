@@ -1,0 +1,11 @@
+﻿
+########################
+# Train Commanders
+########################
+
+### Improve commanders
+# Base value
+marshal_train_commanders_monthly_chance_value_base = {
+	add = martial
+	divide = 2		# Vanilla = 3
+}

@@ -1,0 +1,5 @@
+﻿marshal_task_levy_desertions_modifier = {
+	icon = martial_negative
+	levy_reinforcement_rate = -0.25
+	army_maintenance_mult = 0.1
+}

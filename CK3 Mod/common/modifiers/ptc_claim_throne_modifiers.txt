@@ -1,0 +1,4 @@
+﻿claim_throne_preparing_for_struggle_modifier = {
+	icon = martial_positive
+	army_maintenance_mult = -0.1
+}

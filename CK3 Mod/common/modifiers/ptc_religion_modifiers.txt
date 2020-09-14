@@ -1,0 +1,6 @@
+﻿dynasty_beneficiary_won_ghw = {
+	icon = prestige_positive
+	monthly_prestige_gain_mult = 0.1
+	levy_reinforcement_rate_same_faith = 0.3
+	army_maintenance_mult = -0.05
+}

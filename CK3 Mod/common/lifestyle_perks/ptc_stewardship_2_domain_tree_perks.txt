@@ -1,0 +1,29 @@
+﻿# Efficient Muster Rolls
+organized_muster_rolls_perk = {
+	lifestyle = stewardship_lifestyle
+	tree = domain
+	position = { 0 2 }
+	icon = node_stewardship
+	
+	parent = defensive_measures_perk
+	
+	character_modifier = {
+		levy_reinforcement_rate = 1
+		# Effectively -50% Attrition in non-hostile provinces
+		plains_attrition_mult = -0.5
+		farmlands_attrition_mult = -0.5
+		hills_attrition_mult = -0.5
+		mountains_attrition_mult = -0.5
+		desert_attrition_mult = -0.5
+		desert_mountains_attrition_mult = -0.5
+		oasis_attrition_mult = -0.5
+		jungle_attrition_mult = -0.5
+		forest_attrition_mult = -0.5
+		taiga_attrition_mult = -0.5
+		wetlands_attrition_mult = -0.5
+		steppe_attrition_mult = -0.5
+		floodplains_attrition_mult = -0.5
+		drylands_attrition_mult = -0.5
+		hostile_county_attrition = 0.5
+	}
+}

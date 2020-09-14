@@ -1,0 +1,112 @@
+﻿##########
+# Duchy Capital Buildings
+# These are built in the first barony of the first county of any duchy
+# Holding the associated duchy is required both to build, and for the buildings to be enabled
+##########
+
+royal_armory_01 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+	}
+	
+	can_construct_showing_failures_only = {
+		
+		culture = {
+			has_innovation = innovation_burhs
+		}
+	}
+	
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_2_cost
+	
+	character_modifier = {
+		men_at_arms_cap = normal_building_maa_cap_tier_3
+	}
+	
+	next_building = royal_armory_02
+
+	type_icon = "icon_building_royal_armory.dds"
+	
+	type = duchy_capital
+	
+	ai_value = {
+		base = 10
+	}
+}
+
+royal_armory_02 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+	}
+	
+	can_construct_showing_failures_only = {
+		
+		culture = {
+			has_innovation = innovation_castle_baileys
+		}
+	}
+	
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_3_cost
+	
+	character_modifier = {
+		men_at_arms_cap = normal_building_maa_cap_tier_5
+	}
+	
+	next_building = royal_armory_03
+	
+	type = duchy_capital
+	
+	ai_value = {
+		base = 10
+	}
+}
+
+royal_armory_03 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+	}
+	
+	can_construct_showing_failures_only = {
+		
+		culture = {
+			has_innovation = innovation_royal_armory
+		}
+	}
+	
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_4_cost
+	
+	character_modifier = {
+		men_at_arms_cap = normal_building_maa_cap_tier_7
+	}
+	
+	type = duchy_capital
+	
+	flag = fully_upgraded_duchy_capital_building
+	
+	ai_value = {
+		base = 10
+	}
+}

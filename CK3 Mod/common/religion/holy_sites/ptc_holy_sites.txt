@@ -1,0 +1,44 @@
+﻿#############
+# Islam		#
+#############
+
+# Isma'ili (Shia)
+
+damascus = {
+	county = c_damascus
+
+	character_modifier = {
+		name = holy_site_damascus_effect_name
+		garrison_size = 0.1
+		levy_reinforcement_rate_same_faith = 0.05
+		monthly_county_control_change_factor = 0.1
+	}
+}
+
+
+#############
+# Pagan		#
+#############
+
+# Magyar
+
+poszony = {
+	county = c_poszony
+
+	character_modifier = {
+		name = holy_site_poszony_effect_name
+		hard_casualty_modifier = -0.2
+	}
+}
+
+# Tengri
+
+preslav = {
+	county = c_dorostorum
+
+	character_modifier = {
+		name = holy_site_preslav_effect_name
+		garrison_size = 0.2
+		levy_reinforcement_rate_same_faith = 0.05
+	}
+}

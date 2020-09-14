@@ -1,0 +1,12 @@
+﻿court_chaplain_resisted_conversion_modifier = {
+	icon = county_modifier_development_negative
+	development_growth_factor = tiny_development_growth_loss
+	tax_mult = -0.1
+	garrison_size = -0.5
+}
+
+court_chaplain_religious_fervor_modifier = {
+	icon = martial_positive
+	levy_reinforcement_rate = 0.2
+	garrison_size = 0.5
+}

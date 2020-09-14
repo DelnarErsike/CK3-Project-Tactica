@@ -1,0 +1,21 @@
+﻿controlled_urban_fires_modifier = {
+	icon = outdoors_negative
+	development_growth_factor = -0.05
+	tax_mult = -0.2
+	garrison_size = -0.4
+	levy_reinforcement_rate = -0.2
+}
+managed_urban_fires_modifier = {
+	icon = outdoors_negative
+	development_growth_factor = -0.1
+	tax_mult = -0.3
+	garrison_size = -0.6
+	levy_reinforcement_rate = -0.3
+}
+uncontrolled_urban_fires_modifier = {
+	icon = outdoors_negative
+	development_growth_factor = -0.3
+	tax_mult = -0.5
+	garrison_size = -0.8
+	levy_reinforcement_rate = -0.4
+}

@@ -1,0 +1,21 @@
+﻿dynasty_of_many_crowns = {
+	icon = prestige_positive
+	monthly_prestige_gain_mult = 0.2
+	stewardship = 2
+	direct_vassal_opinion = 5
+	garrison_size = 0.2
+	levy_reinforcement_rate = 0.1
+}
+
+respected_figurehead = {
+	icon = martial_positive
+	levy_reinforcement_rate = 0.25
+	army_maintenance_mult = -0.05
+}
+
+trained_troops_modifier = {
+	icon = martial_positive
+	levy_reinforcement_rate = 0.25
+	army_maintenance_mult = -0.05
+	advantage = 2
+}

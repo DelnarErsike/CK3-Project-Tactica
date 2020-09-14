@@ -1,0 +1,32 @@
+﻿yearly_reduced_theocracy_levies_modifier = {
+	icon = martial_negative
+	garrison_size = -0.2
+	army_maintenance_mult = 0.05
+}
+
+enthusiastic_nomad_settlement_saharan_modifier = {
+	icon = county_modifier_control_positive
+	county_opinion_add = 30
+	garrison_size = 3.0
+	levy_reinforcement_rate = 0.2
+	monthly_county_control_change_add = 0.5
+	tax_mult = 0.2
+}
+
+nomad_settlement_saharan_modifier = {
+	icon = county_modifier_control_positive
+	county_opinion_add = 30
+	garrison_size = 1.5
+	levy_reinforcement_rate = 0.1
+	monthly_county_control_change_add = 0.25
+	tax_mult = 0.1
+}
+
+upset_local_nomads_saharan_modifier = {
+	icon = county_modifier_control_negative
+	county_opinion_add = -10
+	monthly_county_control_change_factor = -0.5
+	garrison_size = -0.5
+	levy_reinforcement_rate = -0.2
+	tax_mult = -0.1
+}

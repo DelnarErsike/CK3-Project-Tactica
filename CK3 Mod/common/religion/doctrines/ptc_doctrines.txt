@@ -1,0 +1,46 @@
+﻿doctrine_clerical_function = {
+	group = "clergy"
+	doctrine_clerical_function_taxation = {
+		clergy_modifier = {
+			#monthly_county_control_change_add_even_if_baron = 0.2
+			monthly_county_control_change_factor_even_if_baron = 0.2
+		}
+		piety_cost = {
+			value = faith_doctrine_cost_low
+			if = {
+				limit = { has_doctrine = doctrine_clerical_function_taxation }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+	}
+	doctrine_clerical_function_alms_and_pacification = {
+		clergy_modifier = {
+			county_opinion_add_even_if_baron = 10
+			domain_tax_mult_even_if_baron = -0.05
+		}
+		piety_cost = {
+			value = faith_doctrine_cost_low
+			if = {
+				limit = { has_doctrine = doctrine_clerical_function_alms_and_pacification }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+	}
+	doctrine_clerical_function_recruitment = {
+		clergy_modifier = {
+			levy_reinforcement_rate_same_faith_even_if_baron = 0.6
+			fort_level = 1
+			prowess = 4
+		}
+		parameters = {
+			clergy_can_fight = yes
+		}
+		piety_cost = {
+			value = faith_doctrine_cost_low
+			if = {
+				limit = { has_doctrine = doctrine_clerical_function_recruitment }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+	}
+}

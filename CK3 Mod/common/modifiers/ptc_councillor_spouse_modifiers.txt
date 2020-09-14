@@ -1,0 +1,17 @@
+﻿councillor_spouse_inspired_troops_county_modifier = {
+	icon = martial_positive
+	garrison_size = 0.5
+	levy_reinforcement_rate = 0.2
+}
+
+councillor_spouse_army_organization_modifier = {
+	icon = martial_positive
+	garrison_size = 0.2
+	levy_reinforcement_rate = 0.1
+	army_maintenance_mult = -0.05
+}
+
+spouse_martial_increased_levy_modifier = {
+	icon = martial_positive
+	army_maintenance_mult = -0.1
+}

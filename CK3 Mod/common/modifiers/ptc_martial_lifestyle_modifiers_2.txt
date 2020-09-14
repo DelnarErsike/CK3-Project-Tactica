@@ -1,0 +1,20 @@
+﻿authority_central_control_modifier = {
+	icon = martial_positive
+	garrison_size = 0.60
+	levy_reinforcement_rate = 0.2
+}
+
+strategy_stocked_larders_modifier = {
+	icon = martial_positive
+	garrison_size = 0.50
+}
+
+strategy_emptied_larders_modifier = {
+	icon = martial_negative
+	garrison_size = -0.25
+}
+
+strategy_entirely_unrelated_disappearances_modifier = {
+	icon = martial_negative
+	garrison_size = -0.25
+}

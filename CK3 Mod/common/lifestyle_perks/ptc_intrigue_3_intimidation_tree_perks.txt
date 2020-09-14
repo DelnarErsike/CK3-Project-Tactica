@@ -1,0 +1,16 @@
+﻿fear_tax_perk = {
+	lifestyle = intrigue_lifestyle
+	tree = intimidation
+	position = { 1 3 }
+	icon = node_intrigue
+	parent = malice_implicit_perk
+	
+	can_be_picked = {
+		always = yes
+	}
+	
+	character_modifier = {
+		intimidated_vassal_tax_contribution_mult = 0.225
+		cowed_vassal_tax_contribution_mult = 0.45
+	}
+}

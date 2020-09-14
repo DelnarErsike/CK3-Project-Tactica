@@ -1,0 +1,13 @@
+﻿prepared_conscription_perk = {
+	lifestyle = martial_lifestyle
+	tree = authority
+	position = { 0 3 }
+	icon = node_martial
+
+	parent = enduring_hardships_perk
+	
+	character_modifier = {
+		hard_casualty_modifier = -0.1
+		army_maintenance_mult = -0.1
+	}
+}

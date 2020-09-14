@@ -1,0 +1,56 @@
+﻿increased_levies_modifier = {
+	icon = martial_positive
+	garrison_size = 0.2
+	levy_reinforcement_rate = 0.05
+}
+
+decreased_levies_modifier = {
+	icon = martial_negative
+	garrison_size = -0.2
+	levy_reinforcement_rate = -0.1
+	army_maintenance_mult = 0.05
+}
+
+horse_strength_modifier = {
+	icon = horse_positive
+	monthly_prestige = 0.25
+	garrison_size = 0.2
+	levy_reinforcement_rate = 0.05
+}
+
+horse_strength_strength_modifier = {
+	icon = horse_positive
+	monthly_prestige = 0.25
+	garrison_size = 0.2
+	levy_reinforcement_rate = 0.05
+}
+
+horse_agility_strength_modifier = {
+	icon = horse_positive
+	monthly_prestige = 0.25
+	prowess = 1
+	garrison_size = 0.2
+	levy_reinforcement_rate = 0.05
+}
+
+horse_endurance_strength_modifier = {
+	icon = horse_positive
+	stress_loss_mult = 0.25
+	garrison_size = 0.2
+	levy_reinforcement_rate = 0.05
+}
+
+horse_fierceness_strength_modifier = {
+	icon = horse_positive
+	monthly_prestige = 0.25
+	advantage = 2
+	garrison_size = 0.2
+	levy_reinforcement_rate = 0.05
+}
+
+martial_strategy_reduced_capital_levy_modifier = {
+	icon = martial_negative
+	garrison_size = -0.2
+	levy_reinforcement_rate = -0.1
+	army_maintenance_mult = 0.05
+}

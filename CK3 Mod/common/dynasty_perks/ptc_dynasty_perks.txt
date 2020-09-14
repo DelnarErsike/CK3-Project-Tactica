@@ -1,0 +1,18 @@
+﻿# WARFARE LEGACIES
+
+warfare_legacy_5 = { # Private Army
+	legacy = warfare_legacy_track
+
+	cost = dynasty_legacy_tier_5_cost
+
+	unlock_maa = house_guard
+
+	character_modifier = {
+		men_at_arms_limit = 1
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = warfare_legacy_5_effect
+		}	
+	}
+}

@@ -1,0 +1,12 @@
+﻿county_corruption_deserting_levies_modifier = {
+	icon = martial_negative
+	levy_reinforcement_rate = -0.2
+	garrison_size = -0.6
+}
+
+county_corruption_inefficient_census_modifier = {
+	icon = letter_negative
+	tax_mult = -0.2
+	levy_reinforcement_rate = -0.2
+	garrison_size = -0.6
+}
