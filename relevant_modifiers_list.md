@@ -35,6 +35,13 @@ supply_capacity_mult
 ```
 fort_level
 garrison_size
+levy_reinforcement_rate
+levy_reinforcement_rate_same_faith
+levy_reinforcement_rate_different_faith
+levy_reinforcement_rate_even_if_baron
+levy_reinforcement_rate_same_faith_even_if_baron
+levy_reinforcement_rate_different_faith_even_if_baron
+levy_reinforcement_rate_friendly_territory
 ```
 
 # Combat Modifiers
