@@ -4,3 +4,6 @@ Musketeer
 Knights Hospitaller
 	by Jaromir HrivnacPro
 	https://www.artstation.com/artwork/y6non
+Forsaken the board game, priest
+	by Jaromir HrivnacPro
+	https://www.artstation.com/artwork/q2WLP
