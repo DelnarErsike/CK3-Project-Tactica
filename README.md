@@ -20,4 +20,5 @@ Ongoing tinkering and work for a complete overhaul of combat, levies, and men-at
 - Do a complete overhaul of the Strategist lifestyle perks and the Martial legacy, since both are intimately tied to combat stuff being overhauled (also touch on perks that are related to Knight efficiency and/or war profiteering).
 - Find some replacement for vassal levies. Maybe something about MaA maintenance?
 - Find some way to hook development into MaA. Maybe average development dictates MaA maintenance or general combat efficiency?
+- Find a way to compensate for lack of rallying for MaA. Triggers of being able to disband and for the command executed on a disband seem to be hardcoded as part of `[ArmyWindow.XYZ]` stuff, but maybe that stuff can be hooked in someplace else and have something added onto it.
 - Introduce innovations, buildings, etc. that make use of weird modifiers that can be applied to the entire realm, e.g. adjusting minimum combat rolls or negating terrain penalties but only in friendly terrain.

@@ -13,7 +13,7 @@ NCombat = {
 #
 
 	DISEMBARK_PENALTY_DAYS = 14				# Vanilla = 30. Changed to 14 because 2 weeks makes more sense and would fit within the timeframe of the Battle of Hastings (William disembarked on 28 Sep., battle happened on 14 Oct.).
-	UNRAISED_LEVY_REGIMENTS_SPEED = 5.4		# Vanilla = 40.0. Changed to match Retreat speed (4.5) inside friendly territory (+20%).
+	UNRAISED_LEVY_REGIMENTS_SPEED = 5.4		# Vanilla = 40.0. Changed to match Retreat speed (4.5) inside friendly territory (+20%). Note that this has no effect on men-at-arms.
 }
 
 NArmy = {
