@@ -5,32 +5,42 @@
 			levies = 0				# Vanilla scaled based on opinion. No more levies!
 			min_levies = 0			# Vanilla scaled based on CA. No more levies!
 			tax = {
-				scope:vassal = {
-					if = {
-						limit = {
-							is_ai = yes
-						}
-						value = clan_government_tax_default
-						if = { 
-							limit = {
-								scope:opinion_of_liege > 0
+				scope:vassal = {	# Vanilla had special, unscaled value for human vassals.
+					value = clan_government_tax_default
+					if = { # Changed to be a Sigmoid curve instead of a linear one, with bigger changes around 0 and fewer at extrema
+						limit = { scope:opinion_of_liege > 0 }
+						add = {
+							# Begin square root approximation tuned to minimize MSE over [1;100]
+							value = 16.783
+							subtract = {
+								value = 1177.604
+								divide = {
+									value = scope:opinion_of_liege
+									add = 73.612
+								}
 							}
-							add =
-							{
-								value = scope:opinion_of_liege
-								multiply = clan_government_tax_opinion_scale_positive
-							}
-						}
-						else = {
-							add =
-							{
-								value = scope:opinion_of_liege
-								multiply = clan_government_tax_opinion_scale_negative
-							}
+							# End square root approximation tuned to minimize MSE over [1;100]
+							multiply = 10 # re-normalize values to between 0 and 100
+							multiply = clan_government_tax_opinion_scale_positive
 						}
 					}
-					else = { # is a player
-						value = clan_government_tax_player
+					else_if = {
+						limit = { scope:opinion_of_liege < 0 }
+						# For mod compatibility, apply a zero first before adding in the sloping up part of the curve
+						subtract = {
+							value = 100
+							multiply = clan_government_tax_opinion_scale_negative
+						}
+						add = {
+							value = 100
+							add = scope:opinion_of_liege # opinion will be negative, so this will subtract
+							multiply = {
+								value = 100
+								add = scope:opinion_of_liege # opinion will be negative, so this will subtract
+							}
+							divide = 100
+							multiply = clan_government_tax_opinion_scale_negative
+						}
 					}
 				}
 			}

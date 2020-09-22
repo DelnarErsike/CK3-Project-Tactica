@@ -1,0 +1,28 @@
+﻿###################
+# GOVERNMENT VALUES  #
+###################
+
+clan_government_tax_default = 0.3		# Vanilla = 0.15. Compensates for no more levies.
+clan_government_tax_min_ca_1 = 0.05		# Vanilla = 0.025. Compensates for no more levies.
+clan_government_tax_min_ca_2 = 0.125	# Vanilla = 0.05. Compensates for no more levies.
+clan_government_tax_min_ca_3 = 0.225	# Vanilla = 0.1. Compensates for no more levies.
+
+clan_government_tax_opinion_scale_negative = { # Vanilla = 0.003
+	value = clan_government_tax_default
+	divide = 100
+}
+
+clan_government_tax_opinion_scale_positive = { # Vanilla = 0.001
+	value = clan_government_tax_default
+	divide = 100
+}
+
+#Feudal government values
+exempt_feudal_tax = 0
+low_feudal_tax = 0.1875				# Vanilla = 0.025
+normal_feudal_tax = 0.25			# Vanilla = 0.1
+high_feudal_tax = 0.3125			# Vanilla = 0.15
+extortionate_feudal_tax = 0.5		# Vanilla = 0.25
+
+scutage_contract_tax = 0.25			# Vanilla = 0.5. Compensates for no more levies and also for higher base tax rates.
+palatinate_contract_taxes = -0.3	# Vanilla = -0.2. Compensates for no more levies.
