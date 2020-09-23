@@ -1,0 +1,104 @@
+﻿122 = {
+	name = Harold # Godwineson, king of England
+	dna = 122_king_harold
+	dynasty = 756
+	martial = 8
+	diplomacy = 6
+	intrigue = 5
+	stewardship = 6
+	religion = "catholic"
+	culture = anglo_saxon
+	disallow_random_traits = yes
+	trait = education_martial_3
+
+	trait = arbitrary
+	trait = arrogant
+	trait = ambitious
+
+	trait = organizer	#For all the good his forced marches did him.
+	trait = physique_good_2	#Oft-noted for his size, weirdly.
+
+	father = 120
+	mother = 101534
+	1022.1.1 = {
+		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}
+	}
+	1045.1.1 = {
+		add_spouse = 131 #Ealdgyth 'Swanneck'
+		effect = {
+			set_relation_lover = character:131
+			add_hook = {
+				target = character:131
+				type = loyalty_hook
+			}
+			reverse_add_opinion = {
+				modifier = love_opinion
+				target = character:131
+				opinion = 40
+			}
+		}
+	}
+	1066.1.1 = {
+		remove_spouse = 131
+		add_spouse = 123 #Ealdgyth of Mercia
+		effect = {
+			reverse_add_opinion = {
+				modifier = divorced_me_opinion
+				target = character:131
+			}
+			reverse_add_opinion = {
+				modifier = divorced_close_kin
+				target = character:111
+			}
+			reverse_add_opinion = {
+				modifier = divorced_close_kin
+				target = character:115
+			}
+			reverse_add_opinion = {
+				modifier = divorced_close_kin
+				target = character:116
+			}
+			reverse_add_opinion = {
+				modifier = divorced_close_kin
+				target = character:127
+			}
+			reverse_add_opinion = {
+				modifier = divorced_close_kin
+				target = character:129
+			}
+		}
+	}
+	1066.9.14 = {
+		effect = {
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = light_infantry
+					stacks = 28
+				}
+				location = 1527
+				origin = 1527
+				inheritable = no
+			}
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = light_infantry
+					stacks = 28
+				}
+				location = 1527
+				origin = 1527
+				inheritable = no
+			}
+		}
+	}
+	1066.10.14 = {
+		death = {
+			death_reason = death_battle
+			killer = 140
+		}
+	}
+}

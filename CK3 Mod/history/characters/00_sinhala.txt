@@ -1,0 +1,72 @@
+﻿189029 = {
+	name = "Kitti" # Kirti
+	dynasty = 1029172
+	religion = "theravada"
+	culture = "sinhala"
+	father = 189027
+	#mother = daughter of Jagatipala
+	trait = just
+	trait = education_martial_4
+	
+	1030.1.1 = {
+		birth = "1030.1.1"
+	}
+	1056.1.1 = {
+		name = "Vijayabahu"
+		trait = zealous
+		trait = ambitious
+		trait = strong
+	}
+	1066.9.15 = {
+		add_pressed_claim = c_kotte
+		add_pressed_claim = c_kandy
+		add_pressed_claim = c_dakhina_desa
+		add_pressed_claim = c_phiti
+		add_pressed_claim = c_nagadipa
+		add_pressed_claim = c_trincomalee
+		add_pressed_claim = c_jaffna
+		effect = {
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = light_infantry
+					stacks = 43
+				}
+				location = 3267
+				origin = 3267
+			}
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = light_infantry
+					stacks = 43
+				}
+				location = 3280
+				origin = 3267
+			}
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = light_infantry
+					stacks = 43
+				}
+				location = 3267
+				origin = 3267
+			}
+			spawn_army = {
+				name = event_troop_default_name
+				men_at_arms = {
+					type = light_infantry
+					stacks = 43
+				}
+				location = 3280
+				origin = 3267
+			}
+			add_gold = 2000 # Need enough gold to pay for army + duchy + kingdom creation.
+			add_prestige = 1000
+		}
+	}
+	1111.1.1 = {
+		death = "1111.1.1"
+	}
+}
