@@ -1,0 +1,709 @@
+﻿# Calculate the max number of men-at-arms regiments a character can have from every single source of men-at-arms cap and men-at-arms limit modifiers
+# Have to do all this manually because there are no conditions checking raw MaA cap and/or raw MaA regiment cap
+raw_max_number_of_maa_regiments = {
+	if = {
+		limit = { holds_landed_title = no }
+		value = 0		# define:NArmy|REGIMENT_MAA_CAP_BY_TIER, but unlanded aren't supposed to have MaA caps anyway
+	}
+	else_if = {
+		limit = { primary_title = { is_mercenary_company = yes } }
+		# Treat as tier 1 because we have no way of dynamically fetching mercenary tier
+		value = 7		# define:NMercenary|MAA_REGIMENTS
+		multiply = 100	# define:NMercenary|MAA_REGIMENT_SIZES
+		divide = define:NArmy|REGIMENT_DEFAULT_STACK_SIZE
+		multiply = {
+			value = 1
+			add = {
+				value = 0
+				# Coarse, but fast, and we don't really want to waste time on going through literally every single innovation when in raw terms, they wouldn't have that big of an effect
+				if = {
+					limit = {
+						NOT = {
+							culture = {
+								has_all_innovations = {
+									with_flag = global_regular
+									culture_era = culture_era_tribal
+								}
+							}
+						}
+					}
+					add = 0.25
+				}
+				if = {
+					limit = {
+						NOT = {
+							culture = {
+								has_all_innovations = {
+									with_flag = global_regular
+									culture_era = culture_era_early_medieval
+								}
+							}
+						}
+					}
+					add = 0.25
+				}
+				if = {
+					limit = {
+						NOT = {
+							culture = {
+								has_all_innovations = {
+									with_flag = global_regular
+									culture_era = culture_era_high_medieval
+								}
+							}
+						}
+					}
+					add = 0.25
+				}
+				if = {
+					limit = {
+						NOT = {
+							culture = {
+								has_all_innovations = {
+									with_flag = global_regular
+									culture_era = culture_era_late_medieval
+								}
+							}
+						}
+					}
+					add = 0.25
+				}
+				multiply = define:NMercenary|SIZE_INNOVATIONS_RATIO
+			}
+		}
+	}
+	else_if = {
+		limit = { primary_title = { is_holy_order  = yes } }
+		value = define:NHolyOrder|NUM_MAA_BASE
+		every_held_title = {
+			limit = {
+				OR = {
+					tier = count
+					tier = baron
+				}
+			}
+			add = define:NHolyOrder|NUM_MAA_PER_HOLDING
+		}
+		divide = define:NArmy|REGIMENT_DEFAULT_STACK_SIZE
+	}
+	else = {
+		value = 1		# define:NArmy|REGIMENT_MAA_CAP_BY_TIER
+		every_directly_owned_province = {
+			# Holding type-based buildings
+			if = {
+				limit = { has_holding_type = holding_castle }
+				if = {
+					limit = { has_building_or_higher = castle_03 }
+					if = {
+						limit = { has_building_or_higher = castle_04 }
+						add = normal_building_maa_cap_tier_8
+					}
+					else = {
+						add = normal_building_maa_cap_tier_6
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = castle_01 }
+					if = {
+						limit = { has_building_or_higher = castle_02 }
+						add = normal_building_maa_cap_tier_4
+					}
+					else = {
+						add = normal_building_maa_cap_tier_2
+					}
+				}
+			}
+			else_if = {
+				limit = { has_holding_type = holding_temple }
+				if = {
+					limit = { has_building_or_higher = temple_03 }
+					if = {
+						limit = { has_building_or_higher = temple_04 }
+						add = small_building_maa_cap_tier_8
+					}
+					else = {
+						add = small_building_maa_cap_tier_6
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = temple_01 }
+					if = {
+						limit = { has_building_or_higher = temple_02 }
+						add = small_building_maa_cap_tier_4
+					}
+					else = {
+						add = small_building_maa_cap_tier_2
+					}
+				}
+			}
+			else_if = {
+				limit = { has_holding_type = holding_city }
+				if = {
+					limit = { has_building_or_higher = city_03 }
+					if = {
+						limit = { has_building_or_higher = city_04 }
+						add = poor_building_maa_cap_tier_8
+					}
+					else = {
+						add = poor_building_maa_cap_tier_6
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = city_01 }
+					if = {
+						limit = { has_building_or_higher = city_02 }
+						add = poor_building_maa_cap_tier_4
+					}
+					else = {
+						add = poor_building_maa_cap_tier_2
+					}
+				}
+			}
+			else_if = {
+				limit = { has_holding_type = holding_tribal }
+				if = {
+					limit = { has_building = tribal_01 }
+					add = normal_building_maa_cap_tier_3
+				}
+				else_if = {
+					limit = { has_building = tribal_02 }
+					add = normal_building_maa_cap_tier_5
+				}
+				if = {
+					limit = { has_building = longhouses_01 }
+					add = normal_building_maa_cap_tier_1
+				}
+				else_if = {
+					limit = { has_building = longhouses_02 }
+					add = normal_building_maa_cap_tier_2
+				}
+				if = {
+					limit = { has_building = war_camps_01 }
+					add = excellent_building_maa_cap_tier_1
+				}
+				else_if = {
+					limit = { has_building = war_camps_02 }
+					add = excellent_building_maa_cap_tier_2
+				}
+				if = {
+					limit = { has_building = palisades_01 }
+					add = normal_building_maa_cap_tier_1
+				}
+				else_if = {
+					limit = { has_building = palisades_02 }
+					add = normal_building_maa_cap_tier_2
+				}
+			}
+			# Duchy capital buildings
+			if = {
+				limit = { has_building_or_higher = royal_armory_02 }
+				if = {
+					limit = { has_building_or_higher = royal_armory_03 }
+					add = normal_building_maa_cap_tier_7
+				}
+				else = {
+					add = normal_building_maa_cap_tier_5
+				}
+			}
+			else_if = {
+				limit = { has_building = royal_armory_01 }
+				add = normal_building_maa_cap_tier_3
+			}
+			# Special capital buildings
+			if = {
+				limit = { has_building = doges_palace_01 }
+				add = good_building_maa_cap_tier_8
+			}
+			if = {
+				limit = { has_building = walls_of_benin_01 }
+				add = normal_building_maa_cap_tier_8
+			}
+			if = {
+				limit = { has_building = theodosian_walls_01 }
+				add = excellent_maa_cap_tier_8
+			}
+			if = {
+				limit = { has_building = aurelian_walls_01 }
+				add = normal_building_maa_cap_tier_2
+			}
+			if = {
+				limit = { has_building = iron_pillar_of_dhar_01 }
+				add = normal_building_maa_cap_tier_2
+			}
+			if = {
+				limit = { has_building_or_higher = falun_mines_01 }
+				if = {
+					limit = { has_building_or_higher = falun_mines_03 }
+					if = {
+						limit = { has_building_or_higher = falun_mines_04 }
+						add = normal_building_maa_cap_tier_7
+					}
+					else = {
+						add = normal_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = falun_mines_02 }
+					add = normal_building_maa_cap_tier_3
+				}
+				else = {
+					add = normal_building_maa_cap_tier_1
+				}
+			}
+			if = {
+				limit = { has_building_or_higher = hall_of_heroes_01 }
+				if = {
+					limit = { has_building_or_higher = hall_of_heroes_04 }
+					if = {
+						limit = { has_building_or_higher = hall_of_heroes_05 }
+						add = good_building_maa_cap_tier_5
+					}
+					else = {
+						add = good_building_maa_cap_tier_4
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = hall_of_heroes_02 }
+					if = {
+						limit = { has_building_or_higher = hall_of_heroes_03 }
+						add = good_building_maa_cap_tier_3
+					}
+					else = {
+						add = good_building_maa_cap_tier_2
+					}
+				}
+				else = {
+					add = good_building_maa_cap_tier_1
+				}
+			}
+			# Terrain-based buildings
+			if = {
+				limit = { has_building_or_higher = pastures_01 }
+				if = {
+					limit = { has_building_or_higher = pastures_05 }
+					if = {
+						limit = { has_building_or_higher = pastures_07 }
+						if = {
+							limit = { has_building_or_higher = pastures_08 }
+							add = poor_building_maa_cap_tier_8
+						}
+						else = {
+							add = poor_building_maa_cap_tier_7
+						}
+					}
+					else_if = {
+						limit = { has_building_or_higher = pastures_06 }
+						add = poor_building_maa_cap_tier_6
+					}
+					else = {
+						add = poor_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = pastures_03 }
+					if = {
+						limit = { has_building_or_higher = pastures_04 }
+						add = poor_building_maa_cap_tier_4
+					}
+					else = {
+						add = poor_building_maa_cap_tier_3
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = pastures_02 }
+					add = poor_building_maa_cap_tier_2
+				}
+				else = {
+					add = poor_building_maa_cap_tier_1
+				}
+			}
+			if = {
+				limit = { has_building_or_higher = hunting_grounds_01 }
+				if = {
+					limit = { has_building_or_higher = hunting_grounds_05 }
+					if = {
+						limit = { has_building_or_higher = hunting_grounds_07 }
+						if = {
+							limit = { has_building_or_higher = hunting_grounds_08 }
+							add = poor_building_maa_cap_tier_8
+						}
+						else = {
+							add = poor_building_maa_cap_tier_7
+						}
+					}
+					else_if = {
+						limit = { has_building_or_higher = hunting_grounds_06 }
+						add = poor_building_maa_cap_tier_6
+					}
+					else = {
+						add = poor_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = hunting_grounds_03 }
+					if = {
+						limit = { has_building_or_higher = hunting_grounds_04 }
+						add = poor_building_maa_cap_tier_4
+					}
+					else = {
+						add = poor_building_maa_cap_tier_3
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = hunting_grounds_02 }
+					add = poor_building_maa_cap_tier_2
+				}
+				else = {
+					add = poor_building_maa_cap_tier_1
+				}
+			}
+			if = {
+				limit = { has_building_or_higher = orchards_01 }
+				if = {
+					limit = { has_building_or_higher = orchards_05 }
+					if = {
+						limit = { has_building_or_higher = orchards_07 }
+						if = {
+							limit = { has_building_or_higher = orchards_08 }
+							add = small_building_maa_cap_tier_8
+						}
+						else = {
+							add = small_building_maa_cap_tier_7
+						}
+					}
+					else_if = {
+						limit = { has_building_or_higher = orchards_06 }
+						add = small_building_maa_cap_tier_6
+					}
+					else = {
+						add = small_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = orchards_03 }
+					if = {
+						limit = { has_building_or_higher = orchards_04 }
+						add = small_building_maa_cap_tier_4
+					}
+					else = {
+						add = small_building_maa_cap_tier_3
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = orchards_02 }
+					add = small_building_maa_cap_tier_2
+				}
+				else = {
+					add = small_building_maa_cap_tier_1
+				}
+			}
+			if = {
+				limit = { has_building_or_higher = military_camps_01 }
+				if = {
+					limit = { has_building_or_higher = military_camps_05 }
+					if = {
+						limit = { has_building_or_higher = military_camps_07 }
+						if = {
+							limit = { has_building_or_higher = military_camps_08 }
+							add = normal_building_maa_cap_tier_8
+						}
+						else = {
+							add = normal_building_maa_cap_tier_7
+						}
+					}
+					else_if = {
+						limit = { has_building_or_higher = military_camps_06 }
+						add = normal_building_maa_cap_tier_6
+					}
+					else = {
+						add = normal_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = military_camps_03 }
+					if = {
+						limit = { has_building_or_higher = military_camps_04 }
+						add = normal_building_maa_cap_tier_4
+					}
+					else = {
+						add = normal_building_maa_cap_tier_3
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = military_camps_02 }
+					add = normal_building_maa_cap_tier_2
+				}
+				else = {
+					add = normal_building_maa_cap_tier_1
+				}
+			}
+			if = {
+				limit = { has_building_or_higher = regimental_camps_01 }
+				if = {
+					limit = { has_building_or_higher = regimental_camps_05 }
+					if = {
+						limit = { has_building_or_higher = regimental_camps_07 }
+						if = {
+							limit = { has_building_or_higher = regimental_camps_08 }
+							add = excellent_building_maa_cap_tier_8
+						}
+						else = {
+							add = excellent_building_maa_cap_tier_7
+						}
+					}
+					else_if = {
+						limit = { has_building_or_higher = regimental_camps_06 }
+						add = excellent_building_maa_cap_tier_6
+					}
+					else = {
+						add = excellent_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = regimental_camps_03 }
+					if = {
+						limit = { has_building_or_higher = regimental_camps_04 }
+						add = excellent_building_maa_cap_tier_4
+					}
+					else = {
+						add = excellent_building_maa_cap_tier_3
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = regimental_camps_02 }
+					add = excellent_building_maa_cap_tier_2
+				}
+				else = {
+					add = excellent_building_maa_cap_tier_1
+				}
+			}
+			if = {
+				limit = { has_building_or_higher = ramparts_01 }
+				if = {
+					limit = { has_building_or_higher = ramparts_05 }
+					if = {
+						limit = { has_building_or_higher = ramparts_07 }
+						if = {
+							limit = { has_building_or_higher = ramparts_08 }
+							add = normal_building_maa_cap_tier_8
+						}
+						else = {
+							add = normal_building_maa_cap_tier_7
+						}
+					}
+					else_if = {
+						limit = { has_building_or_higher = ramparts_06 }
+						add = normal_building_maa_cap_tier_6
+					}
+					else = {
+						add = normal_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = ramparts_03 }
+					if = {
+						limit = { has_building_or_higher = ramparts_04 }
+						add = normal_building_maa_cap_tier_4
+					}
+					else = {
+						add = normal_building_maa_cap_tier_3
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = ramparts_02 }
+					add = normal_building_maa_cap_tier_2
+				}
+				else = {
+					add = normal_building_maa_cap_tier_1
+				}
+			}
+			if = {
+				limit = { has_building_or_higher = outposts_01 }
+				if = {
+					limit = { has_building_or_higher = outposts_05 }
+					if = {
+						limit = { has_building_or_higher = outposts_07 }
+						if = {
+							limit = { has_building_or_higher = outposts_08 }
+							add = poor_building_maa_cap_tier_8
+						}
+						else = {
+							add = poor_building_maa_cap_tier_7
+						}
+					}
+					else_if = {
+						limit = { has_building_or_higher = outposts_06 }
+						add = poor_building_maa_cap_tier_6
+					}
+					else = {
+						add = poor_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = outposts_03 }
+					if = {
+						limit = { has_building_or_higher = outposts_04 }
+						add = poor_building_maa_cap_tier_4
+					}
+					else = {
+						add = poor_building_maa_cap_tier_3
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = outposts_02 }
+					add = poor_building_maa_cap_tier_2
+				}
+				else = {
+					add = poor_building_maa_cap_tier_1
+				}
+			}
+			if = {
+				limit = { has_building_or_higher = barracks_01 }
+				if = {
+					limit = { has_building_or_higher = barracks_05 }
+					if = {
+						limit = { has_building_or_higher = barracks_07 }
+						if = {
+							limit = { has_building_or_higher = barracks_08 }
+							add = good_building_maa_cap_tier_8
+						}
+						else = {
+							add = good_building_maa_cap_tier_7
+						}
+					}
+					else_if = {
+						limit = { has_building_or_higher = barracks_06 }
+						add = good_building_maa_cap_tier_6
+					}
+					else = {
+						add = good_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = barracks_03 }
+					if = {
+						limit = { has_building_or_higher = barracks_04 }
+						add = good_building_maa_cap_tier_4
+					}
+					else = {
+						add = good_building_maa_cap_tier_3
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = barracks_02 }
+					add = good_building_maa_cap_tier_2
+				}
+				else = {
+					add = good_building_maa_cap_tier_1
+				}
+			}
+			if = {
+				limit = { has_building_or_higher = camel_farms_01 }
+				if = {
+					limit = { has_building_or_higher = camel_farms_05 }
+					if = {
+						limit = { has_building_or_higher = camel_farms_07 }
+						if = {
+							limit = { has_building_or_higher = camel_farms_08 }
+							add = small_building_maa_cap_tier_8
+						}
+						else = {
+							add = small_building_maa_cap_tier_7
+						}
+					}
+					else_if = {
+						limit = { has_building_or_higher = camel_farms_06 }
+						add = small_building_maa_cap_tier_6
+					}
+					else = {
+						add = small_building_maa_cap_tier_5
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = camel_farms_03 }
+					if = {
+						limit = { has_building_or_higher = camel_farms_04 }
+						add = small_building_maa_cap_tier_4
+					}
+					else = {
+						add = small_building_maa_cap_tier_3
+					}
+				}
+				else_if = {
+					limit = { has_building_or_higher = camel_farms_02 }
+					add = small_building_maa_cap_tier_2
+				}
+				else = {
+					add = small_building_maa_cap_tier_1
+				}
+			}
+		}
+		multiply = max_number_of_maa_regiments_per_slot
+	}
+	round = yes
+}
+
+max_number_of_maa_regiments_per_slot = {
+	value = define:NArmy|REGIMENT_DEFAULT_MAX_SIZE
+	culture = {
+		if = {
+			limit = { has_innovation = innovation_mustering_grounds }
+			add = 1
+		}
+		if = {
+			limit = { has_innovation = innovation_house_soldiers }
+			add = 2
+		}
+		if = {
+			limit = { has_innovation = innovation_men_at_arms }
+			add = 3
+		}
+		if = {
+			limit = { has_innovation = innovation_standing_armies }
+			add = 4
+		}
+	}
+	if = {
+		limit = { dynasty = { has_dynasty_perk = warfare_legacy_5 } }
+		add = 2
+	}
+}
+
+max_number_of_maa_regiments_with_vassals = {
+	value = raw_max_number_of_maa_regiments
+	every_vassal = {
+		if = {
+			limit = { vassal_contract_obligation_level:feudal_government_levies = feudal_levies_low_level }
+			add = {
+				value = max_number_of_maa_regiments_with_vassals
+				multiply = low_feudal_maa_contrib_multiplier
+				multiply = max_number_of_maa_regiments_per_slot
+			}
+		}
+		else_if = {
+			limit = { vassal_contract_obligation_level:feudal_government_levies = feudal_levies_normal_level }
+			add = {
+				value = max_number_of_maa_regiments_with_vassals
+				multiply = normal_feudal_maa_contrib_multiplier
+				multiply = max_number_of_maa_regiments_per_slot
+			}
+		}
+		else_if = {
+			limit = { vassal_contract_obligation_level:feudal_government_levies = feudal_levies_high_level }
+			add = {
+				value = max_number_of_maa_regiments_with_vassals
+				multiply = high_feudal_maa_contrib_multiplier
+				multiply = max_number_of_maa_regiments_per_slot
+			}
+		}
+		else_if = {
+			limit = { vassal_contract_obligation_level:feudal_government_levies = feudal_levies_extortionate_level }
+			add = {
+				value = max_number_of_maa_regiments_with_vassals
+				multiply = extortionate_feudal_maa_contrib_multiplier
+				multiply = max_number_of_maa_regiments_per_slot
+			}
+		}
+	}
+	round = yes
+}

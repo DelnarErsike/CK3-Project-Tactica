@@ -37,7 +37,7 @@ innovation_men_at_arms = {
 
 	modifier = {
 		men_at_arms_maintenance = -0.05
-		men_at_arms_limit = 1
+		men_at_arms_limit = 3
 	}
 
 	flag = global_regular

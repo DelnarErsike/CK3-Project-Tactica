@@ -32,7 +32,7 @@ NArmy = {
 
 	REGIMENT_DEFAULT_STACK_SIZE = 25			# Vanilla = 100. 25 makes it easier to tweak numbers with holding buildings.
 	REGIMENT_DEFAULT_MAX_SIZE = 4 				# Vanilla = 3. This makes the default value of a MaA slot = 100 soldiers.
-	REGIMENT_MAA_CAP_BY_TIER = { 0 0 0 0 0 0 }	# Vanilla = { 0 1 2 3 4 5 }. The entire army being handled through MaA means free MaA slots must no longer be a thing.
+	REGIMENT_MAA_CAP_BY_TIER = { 0 1 1 1 1 1 }	# Vanilla = { 0 1 2 3 4 5 }. The entire army being handled through MaA means free MaA slots must no longer be a thing.
 	REGIMENT_MAA_EXTRA_BY_CAP = 0.25			# Vanilla = 0.2. Needs to a bit higher because dipping below the cap would be much easier.
 	REGIMENT_MAA_STARTING_COUNT = 25			# Vanilla = 5. First stack starts completely filled. Being able to cheese this to get free MaA quickly if you've run out is intended because of the massive gold cost involved; you might as well hire mercenaries instead.
 }
