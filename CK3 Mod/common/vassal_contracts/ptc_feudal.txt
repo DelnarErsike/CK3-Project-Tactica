@@ -65,17 +65,10 @@ feudal_government_levies = {
 			position = { 0 0 }
 			
 			liege_modifier = {
-				men_at_arms_cap = {
-					value = exempt_feudal_maa_contrib
-					scope:liege = { divide = max_number_of_maa_regiments_per_slot }
-				}
+				men_at_arms_cap = exempt_feudal_maa_contrib_liege_gain
 			}
 			vassal_modifier = {
-				men_at_arms_cap = {
-					value = exempt_feudal_maa_contrib
-					scope:vassal = { divide = max_number_of_maa_regiments_per_slot }
-					multiply = -1
-				}
+				men_at_arms_cap = exempt_feudal_maa_contrib_vassal_gain
 			}
 			vassal_opinion = 10
 
@@ -87,17 +80,10 @@ feudal_government_levies = {
 			position = { 1 0 }
 			
 			liege_modifier = {
-				men_at_arms_cap = {
-					value = low_feudal_maa_contrib
-					scope:liege = { divide = max_number_of_maa_regiments_per_slot }
-				}
+				men_at_arms_cap = low_feudal_maa_contrib_liege_gain
 			}
 			vassal_modifier = {
-				men_at_arms_cap = {
-					value = low_feudal_maa_contrib
-					scope:vassal = { divide = max_number_of_maa_regiments_per_slot }
-					multiply = -1
-				}
+				men_at_arms_cap = low_feudal_maa_contrib_vassal_gain
 			}
 			vassal_opinion = 5
 
@@ -110,17 +96,10 @@ feudal_government_levies = {
 			position = { 2 0 }
 			
 			liege_modifier = {
-				men_at_arms_cap = {
-					value = normal_feudal_maa_contrib
-					scope:liege = { divide = max_number_of_maa_regiments_per_slot }
-				}
+				men_at_arms_cap = normal_feudal_maa_contrib_liege_gain
 			}
 			vassal_modifier = {
-				men_at_arms_cap = {
-					value = normal_feudal_maa_contrib
-					scope:vassal = { divide = max_number_of_maa_regiments_per_slot }
-					multiply = -1
-				}
+				men_at_arms_cap = normal_feudal_maa_contrib_vassal_gain
 			}
 
 			ai_liege_desire = 3
@@ -131,17 +110,10 @@ feudal_government_levies = {
 			position = { 3 0 }
 			
 			liege_modifier = {
-				men_at_arms_cap = {
-					value = high_feudal_maa_contrib
-					scope:liege = { divide = max_number_of_maa_regiments_per_slot }
-				}
+				men_at_arms_cap = high_feudal_maa_contrib_liege_gain
 			}
 			vassal_modifier = {
-				men_at_arms_cap = {
-					value = high_feudal_maa_contrib
-					scope:vassal = { divide = max_number_of_maa_regiments_per_slot }
-					multiply = -1
-				}
+				men_at_arms_cap = high_feudal_maa_contrib_vassal_gain
 			}
 			vassal_opinion = -10	# Vanilla = -15
 
@@ -153,17 +125,10 @@ feudal_government_levies = {
 			position = { 4 0 }
 			
 			liege_modifier = {
-				men_at_arms_cap = {
-					value = extortionate_feudal_maa_contrib
-					scope:liege = { divide = max_number_of_maa_regiments_per_slot }
-				}
+				men_at_arms_cap = extortionate_feudal_maa_contrib_liege_gain
 			}
 			vassal_modifier = {
-				men_at_arms_cap = {
-					value = extortionate_feudal_maa_contrib
-					scope:vassal = { divide = max_number_of_maa_regiments_per_slot }
-					multiply = -1
-				}
+				men_at_arms_cap = extortionate_feudal_maa_contrib_vassal_gain
 			}
 			vassal_opinion = -20	# Vanilla = -25
 

@@ -313,7 +313,7 @@ theodosian_walls_01 = {
 		hostile_raid_time = 0.5
 	}
 	character_modifier = {
-		men_at_arms_cap = excellent_maa_cap_tier_8
+		men_at_arms_cap = excellent_building_maa_cap_tier_8
 	}
 	
 	ai_value = {

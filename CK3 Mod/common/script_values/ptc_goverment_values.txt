@@ -49,3 +49,43 @@ extortionate_feudal_maa_contrib = {
 	scope:vassal = { value = max_number_of_maa_regiments_with_vassal }
 	multiply = extortionate_feudal_maa_contrib_multiplier
 }
+
+exempt_feudal_maa_contrib_liege_gain = 0
+low_feudal_maa_contrib_liege_gain = {
+	value = low_feudal_maa_contrib
+	scope:liege = { divide = max_number_of_maa_regiments_per_slot }
+}
+normal_feudal_maa_contrib_liege_gain = {
+	value = normal_feudal_maa_contrib
+	scope:liege = { divide = max_number_of_maa_regiments_per_slot }
+}
+high_feudal_maa_contrib_liege_gain = {
+	value = high_feudal_maa_contrib
+	scope:liege = { divide = max_number_of_maa_regiments_per_slot }
+}
+extortionate_feudal_maa_contrib_liege_gain = {
+	value = extortionate_feudal_maa_contrib
+	scope:liege = { divide = max_number_of_maa_regiments_per_slot }
+}
+
+exempt_feudal_maa_contrib_vassal_gain = 0
+low_feudal_maa_contrib_vassal_gain = {
+	value = low_feudal_maa_contrib
+	scope:vassal = { divide = max_number_of_maa_regiments_per_slot }
+	multiply = -1
+}
+normal_feudal_maa_contrib_vassal_gain = {
+	value = normal_feudal_maa_contrib
+	scope:vassal = { divide = max_number_of_maa_regiments_per_slot }
+	multiply = -1
+}
+high_feudal_maa_contrib_vassal_gain = {
+	value = high_feudal_maa_contrib
+	scope:vassal = { divide = max_number_of_maa_regiments_per_slot }
+	multiply = -1
+}
+extortionate_feudal_maa_contrib_vassal_gain = {
+	value = extortionate_feudal_maa_contrib
+	scope:vassal = { divide = max_number_of_maa_regiments_per_slot }
+	multiply = -1
+}

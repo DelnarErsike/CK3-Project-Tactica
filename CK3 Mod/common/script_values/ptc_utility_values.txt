@@ -76,12 +76,7 @@ raw_max_number_of_maa_regiments = {
 		limit = { primary_title = { is_holy_order  = yes } }
 		value = define:NHolyOrder|NUM_MAA_BASE
 		every_held_title = {
-			limit = {
-				OR = {
-					tier = count
-					tier = baron
-				}
-			}
+			limit = { tier <= 2 }
 			add = define:NHolyOrder|NUM_MAA_PER_HOLDING
 		}
 		divide = define:NArmy|REGIMENT_DEFAULT_STACK_SIZE
@@ -91,7 +86,7 @@ raw_max_number_of_maa_regiments = {
 		every_directly_owned_province = {
 			# Holding type-based buildings
 			if = {
-				limit = { has_holding_type = holding_castle }
+				limit = { has_holding_type = castle_holding }
 				if = {
 					limit = { has_building_or_higher = castle_03 }
 					if = {
@@ -114,7 +109,7 @@ raw_max_number_of_maa_regiments = {
 				}
 			}
 			else_if = {
-				limit = { has_holding_type = holding_temple }
+				limit = { has_holding_type = church_holding }
 				if = {
 					limit = { has_building_or_higher = temple_03 }
 					if = {
@@ -137,7 +132,7 @@ raw_max_number_of_maa_regiments = {
 				}
 			}
 			else_if = {
-				limit = { has_holding_type = holding_city }
+				limit = { has_holding_type = city_holding }
 				if = {
 					limit = { has_building_or_higher = city_03 }
 					if = {
@@ -160,13 +155,13 @@ raw_max_number_of_maa_regiments = {
 				}
 			}
 			else_if = {
-				limit = { has_holding_type = holding_tribal }
+				limit = { has_holding_type = tribal_holding }
 				if = {
-					limit = { has_building = tribal_01 }
+					limit = { has_building = tribe_01 }
 					add = normal_building_maa_cap_tier_3
 				}
 				else_if = {
-					limit = { has_building = tribal_02 }
+					limit = { has_building = tribe_02 }
 					add = normal_building_maa_cap_tier_5
 				}
 				if = {
@@ -220,7 +215,7 @@ raw_max_number_of_maa_regiments = {
 			}
 			if = {
 				limit = { has_building = theodosian_walls_01 }
-				add = excellent_maa_cap_tier_8
+				add = excellent_building_maa_cap_tier_8
 			}
 			if = {
 				limit = { has_building = aurelian_walls_01 }
@@ -438,13 +433,13 @@ raw_max_number_of_maa_regiments = {
 				}
 			}
 			if = {
-				limit = { has_building_or_higher = regimental_camps_01 }
+				limit = { has_building_or_higher = regimental_grounds_01 }
 				if = {
-					limit = { has_building_or_higher = regimental_camps_05 }
+					limit = { has_building_or_higher = regimental_grounds_05 }
 					if = {
-						limit = { has_building_or_higher = regimental_camps_07 }
+						limit = { has_building_or_higher = regimental_grounds_07 }
 						if = {
-							limit = { has_building_or_higher = regimental_camps_08 }
+							limit = { has_building_or_higher = regimental_grounds_08 }
 							add = excellent_building_maa_cap_tier_8
 						}
 						else = {
@@ -452,7 +447,7 @@ raw_max_number_of_maa_regiments = {
 						}
 					}
 					else_if = {
-						limit = { has_building_or_higher = regimental_camps_06 }
+						limit = { has_building_or_higher = regimental_grounds_06 }
 						add = excellent_building_maa_cap_tier_6
 					}
 					else = {
@@ -460,9 +455,9 @@ raw_max_number_of_maa_regiments = {
 					}
 				}
 				else_if = {
-					limit = { has_building_or_higher = regimental_camps_03 }
+					limit = { has_building_or_higher = regimental_grounds_03 }
 					if = {
-						limit = { has_building_or_higher = regimental_camps_04 }
+						limit = { has_building_or_higher = regimental_grounds_04 }
 						add = excellent_building_maa_cap_tier_4
 					}
 					else = {
@@ -470,7 +465,7 @@ raw_max_number_of_maa_regiments = {
 					}
 				}
 				else_if = {
-					limit = { has_building_or_higher = regimental_camps_02 }
+					limit = { has_building_or_higher = regimental_grounds_02 }
 					add = excellent_building_maa_cap_tier_2
 				}
 				else = {
