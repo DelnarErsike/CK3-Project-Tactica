@@ -34,19 +34,19 @@ extortionate_feudal_maa_contrib_multiplier = 0.4
 
 exempt_feudal_maa_contrib = 0
 low_feudal_maa_contrib = {
-	scope:vassal = { value = max_number_of_maa_regiments_with_vassal }
+	scope:vassal = { value = max_number_of_maa_regiments_with_vassals }
 	multiply = low_feudal_maa_contrib_multiplier
 }
 normal_feudal_maa_contrib = {
-	scope:vassal = { value = max_number_of_maa_regiments_with_vassal }
+	scope:vassal = { value = max_number_of_maa_regiments_with_vassals }
 	multiply = normal_feudal_maa_contrib_multiplier
 }
 high_feudal_maa_contrib = {
-	scope:vassal = { value = max_number_of_maa_regiments_with_vassal }
+	scope:vassal = { value = max_number_of_maa_regiments_with_vassals }
 	multiply = high_feudal_maa_contrib_multiplier
 }
 extortionate_feudal_maa_contrib = {
-	scope:vassal = { value = max_number_of_maa_regiments_with_vassal }
+	scope:vassal = { value = max_number_of_maa_regiments_with_vassals }
 	multiply = extortionate_feudal_maa_contrib_multiplier
 }
 

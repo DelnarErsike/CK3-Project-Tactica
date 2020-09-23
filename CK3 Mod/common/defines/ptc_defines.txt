@@ -32,7 +32,7 @@ NArmy = {
 
 	REGIMENT_DEFAULT_STACK_SIZE = 25			# Vanilla = 100. 25 makes it easier to tweak numbers with holding buildings.
 	REGIMENT_DEFAULT_MAX_SIZE = 4 				# Vanilla = 3. This makes the default value of a MaA slot = 100 soldiers.
-	REGIMENT_MAA_CAP_BY_TIER = { 0 1 1 1 1 1 }	# Vanilla = { 0 1 2 3 4 5 }. The entire army being handled through MaA means free MaA slots must no longer be a thing.
+	REGIMENT_MAA_CAP_BY_TIER = { 0 1 2 3 4 5 }	# Vanilla = { 0 1 2 3 4 5 }. Here for posterity, in case I change my mind about how MaA slots should work
 	REGIMENT_MAA_EXTRA_BY_CAP = 0.25			# Vanilla = 0.2. Needs to a bit higher because dipping below the cap would be much easier.
 	REGIMENT_MAA_STARTING_COUNT = 25			# Vanilla = 5. First stack starts completely filled. Being able to cheese this to get free MaA quickly if you've run out is intended because of the massive gold cost involved; you might as well hire mercenaries instead.
 }
@@ -52,9 +52,9 @@ NCombat = {
 
 NMercenary = {
 	LEVIES = { 0 0 0 }						# Vanilla = { 400 800 1200 }. No more levies!
-	MAA_REGIMENTS = { 7 14 21 } 			# Vanilla = { 1 2 3 }. All levies are men-at-arms now, so together with MAA_REGIMENT_SIZES, this keeps merc sizes roughly the same as in vanilla.
+	MAA_REGIMENTS = { 2 3 4 } 				# Vanilla = { 1 2 3 }. Mercenaries are hardcoded to pick different regiments for each one, so just increase all values by 1 to account for levies being a new MaA type.
 	NUM_KNIGHTS = { 2 4 6 } 				# Vanilla = { 2 3 4 }. Knight count now grows at the same rate as men-at-arms count.
-	MAA_REGIMENT_SIZES = { 100 100 100 }	# Vanilla = { 300 300 300 }. Standardized to keep things easy to calculate.
+	MAA_REGIMENT_SIZES = { 350 500 600 }	# Vanilla = { 300 300 300 }. This is the actual regiment cap that mercenaries will have per MaA type.
 	LEVY_COST_PER_100_SOLDIERS = 24			# Vanilla = 12. Parity with light_infantry_recruitment_cost and MAA_COST_RATIO.
 	MAA_COST_RATIO = 2.0					# Vanilla = 0.5. MaA costs being less on the up-front side and more on the reinforce side means this can be raised.
 	ALLOWED_DEBT_MONTHS = 3					# Vanilla = 24. 3 months in debt allows for a minor amount of leeway (more than e.g. 1 month), but we still don't want people to hire mercs easily if they don't have enough gold.
