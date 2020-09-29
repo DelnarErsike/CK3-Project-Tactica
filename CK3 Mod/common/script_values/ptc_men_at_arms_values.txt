@@ -13,31 +13,31 @@
 @light_infantry_low_maint_cost = 0
 @light_infantry_high_maint_cost = 0.01
 
-@skirmisher_recruitment_cost = 10
+@skirmisher_recruitment_cost = 9
 @skirmisher_low_maint_cost = 0.0375
 @skirmisher_high_maint_cost = @[skirmisher_low_maint_cost * high_maint_mult]
 
-@archers_recruitment_cost = 15
+@archers_recruitment_cost = 11
 @archers_low_maint_cost = 0.05
 @archers_high_maint_cost = @[archers_low_maint_cost * high_maint_mult]
 
-@pikemen_recruitment_cost = 20
+@pikemen_recruitment_cost = 15
 @pikemen_low_maint_cost = 0.075
 @pikemen_high_maint_cost = @[pikemen_low_maint_cost * high_maint_mult]
 
-@heavy_infantry_recruitment_cost = 25
+@heavy_infantry_recruitment_cost = 18
 @heavy_infantry_low_maint_cost = 0.1
 @heavy_infantry_high_maint_cost = @[heavy_infantry_low_maint_cost * high_maint_mult]
 
-@light_cavalry_recruitment_cost = 23
+@light_cavalry_recruitment_cost = 19
 @light_cavalry_low_maint_cost = 0.0875
 @light_cavalry_high_maint_cost = @[light_cavalry_low_maint_cost * high_maint_mult]
 
-@heavy_cavalry_recruitment_cost = 36	# Adjusted to base type having 1/5 regiment size instead of normal 1/4 regiment size
+@heavy_cavalry_recruitment_cost = 32	# Adjusted to base type having 1/5 regiment size instead of normal 1/4 regiment size
 @heavy_cavalry_low_maint_cost = 0.14	# Adjusted to base type having 1/5 regiment size instead of normal 1/4 regiment size
 @heavy_cavalry_high_maint_cost = @[heavy_cavalry_low_maint_cost * high_maint_mult]
 
-@siege_weapons_recruitment_cost = 40	# Adjusted to base type having 1/2 regiment size instead of normal 1/4 regiment size
+@siege_weapons_recruitment_cost = 30	# Adjusted to base type having 1/2 regiment size instead of normal 1/4 regiment size
 @siege_weapons_low_maint_cost = 0.1		# Adjusted to base type having 1/2 regiment size instead of normal 1/4 regiment size
 @siege_weapons_high_maint_cost = @[siege_weapons_low_maint_cost * high_maint_mult]
 
@@ -55,7 +55,7 @@ bowmen_recruitment_cost = @[archers_recruitment_cost]
 bowmen_low_maint_cost = @[archers_low_maint_cost]
 bowmen_high_maint_cost = @[archers_high_maint_cost]
 
-crossbowmen_recruitment_cost = @[archers_recruitment_cost * 1.5]
+crossbowmen_recruitment_cost = @[archers_recruitment_cost * 1.6]
 crossbowmen_low_maint_cost = @[archers_low_maint_cost * 1.5]
 crossbowmen_high_maint_cost = @[archers_high_maint_cost * 1.5]
 
@@ -146,6 +146,10 @@ hobelar_high_maint_cost = @[light_cavalry_high_maint_cost * 1.1]
 schiltron_recruitment_cost = @[pikemen_recruitment_cost * 1.5]
 schiltron_low_maint_cost = @[pikemen_low_maint_cost * 1.5]
 schiltron_high_maint_cost = @[pikemen_high_maint_cost * 1.5]
+
+ayyar_recruitment_cost = @[heavy_infantry_recruitment_cost - 15]
+ayyar_low_maint_cost = @[heavy_infantry_low_maint_cost * 0.9]
+ayyar_high_maint_cost = @[heavy_infantry_high_maint_cost * 0.9]
 
 metsanvartija_recruitment_cost = @[archers_recruitment_cost * 1.1]
 metsanvartija_low_maint_cost = @[archers_low_maint_cost * 1.1]

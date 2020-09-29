@@ -95,6 +95,7 @@ longhouses_01 = {
 
 	is_enabled = {
 		building_requirement_tribal = yes
+		building_disable_if_vastly_over_domain_limit_trigger = yes
 	}
 	can_construct_potential = {
 		has_building_or_higher = tribe_01
@@ -130,6 +131,7 @@ longhouses_02 = {
 
 	is_enabled = {
 		building_requirement_tribal = yes
+		building_disable_if_vastly_over_domain_limit_trigger = yes
 	}
 	can_construct_potential = {
 		has_building_or_higher = tribe_01
@@ -164,6 +166,7 @@ war_camps_01 = {
 
 	is_enabled = {
 		building_requirement_tribal = yes
+		building_disable_if_vastly_over_domain_limit_trigger = yes
 	}
 	can_construct_potential = {
 		has_building_or_higher = tribe_01
@@ -201,6 +204,7 @@ war_camps_02 = {
 
 	is_enabled = {
 		building_requirement_tribal = yes
+		building_disable_if_vastly_over_domain_limit_trigger = yes
 	}
 	can_construct_potential = {
 		has_building_or_higher = tribe_01
@@ -237,6 +241,7 @@ palisades_01 = {
 
 	is_enabled = {
 		building_requirement_tribal = yes
+		building_disable_if_vastly_over_domain_limit_trigger = yes
 	}
 	can_construct_potential = {
 		has_building_or_higher = tribe_01
@@ -278,6 +283,7 @@ palisades_02 = {
 
 	is_enabled = {
 		building_requirement_tribal = yes
+		building_disable_if_vastly_over_domain_limit_trigger = yes
 	}
 	can_construct_potential = {
 		has_building_or_higher = tribe_01

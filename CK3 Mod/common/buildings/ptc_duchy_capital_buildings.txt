@@ -21,6 +21,7 @@ royal_armory_01 = {
 	
 	is_enabled = {
 		county.duchy.holder = county.holder
+		building_disable_if_vastly_over_domain_limit_trigger = yes
 	}
 	show_disabled = yes
 	
@@ -37,7 +38,7 @@ royal_armory_01 = {
 	type = duchy_capital
 	
 	ai_value = {
-		base = 10
+		base = 20
 	}
 }
 
@@ -58,6 +59,7 @@ royal_armory_02 = {
 	
 	is_enabled = {
 		county.duchy.holder = county.holder
+		building_disable_if_vastly_over_domain_limit_trigger = yes
 	}
 	show_disabled = yes
 	
@@ -72,7 +74,7 @@ royal_armory_02 = {
 	type = duchy_capital
 	
 	ai_value = {
-		base = 10
+		base = 20
 	}
 }
 
@@ -93,6 +95,7 @@ royal_armory_03 = {
 	
 	is_enabled = {
 		county.duchy.holder = county.holder
+		building_disable_if_vastly_over_domain_limit_trigger = yes
 	}
 	show_disabled = yes
 	
@@ -107,6 +110,6 @@ royal_armory_03 = {
 	flag = fully_upgraded_duchy_capital_building
 	
 	ai_value = {
-		base = 10
+		base = 20
 	}
 }

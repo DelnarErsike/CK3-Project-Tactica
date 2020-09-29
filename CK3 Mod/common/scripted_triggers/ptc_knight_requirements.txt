@@ -17,6 +17,7 @@
 				}
 			}
 		}
+		has_trait = blind
 	}
 	is_ai = yes
 	prowess > average_skill_rating # Knight needs to have higher-than-average Prowess (by default, this is 8)

@@ -7,6 +7,10 @@
 pastures_01 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_pastures_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -51,6 +55,10 @@ pastures_01 = {
 pastures_02 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_pastures_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -82,6 +90,10 @@ pastures_02 = {
 
 pastures_03 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_pastures_requirement_terrain = yes
@@ -118,6 +130,10 @@ pastures_03 = {
 
 pastures_04 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_pastures_requirement_terrain = yes
@@ -156,6 +172,10 @@ pastures_04 = {
 pastures_05 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_pastures_requirement_terrain = yes
 	}
@@ -193,6 +213,10 @@ pastures_05 = {
 
 pastures_06 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_pastures_requirement_terrain = yes
@@ -234,6 +258,10 @@ pastures_06 = {
 
 pastures_07 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_pastures_requirement_terrain = yes
@@ -280,6 +308,10 @@ pastures_07 = {
 pastures_08 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_pastures_requirement_terrain = yes
 	}
@@ -324,6 +356,10 @@ pastures_08 = {
 
 hunting_grounds_01 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_hunting_grounds_requirement_terrain = yes
@@ -377,6 +413,10 @@ hunting_grounds_01 = {
 hunting_grounds_02 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_hunting_grounds_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -416,6 +456,10 @@ hunting_grounds_02 = {
 
 hunting_grounds_03 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_hunting_grounds_requirement_terrain = yes
@@ -461,6 +505,10 @@ hunting_grounds_03 = {
 hunting_grounds_04 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_hunting_grounds_requirement_terrain = yes
 	}
@@ -504,6 +552,10 @@ hunting_grounds_04 = {
 
 hunting_grounds_05 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_hunting_grounds_requirement_terrain = yes
@@ -550,6 +602,10 @@ hunting_grounds_05 = {
 hunting_grounds_06 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_hunting_grounds_requirement_terrain = yes
 	}
@@ -594,6 +650,10 @@ hunting_grounds_06 = {
 
 hunting_grounds_07 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_hunting_grounds_requirement_terrain = yes
@@ -644,6 +704,10 @@ hunting_grounds_07 = {
 hunting_grounds_08 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_hunting_grounds_requirement_terrain = yes
 	}
@@ -693,6 +757,10 @@ hunting_grounds_08 = {
 orchards_01 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_orchards_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -722,6 +790,10 @@ orchards_01 = {
 
 orchards_02 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_orchards_requirement_terrain = yes
@@ -754,6 +826,10 @@ orchards_02 = {
 
 orchards_03 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_orchards_requirement_terrain = yes
@@ -790,6 +866,10 @@ orchards_03 = {
 
 orchards_04 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_orchards_requirement_terrain = yes
@@ -829,6 +909,10 @@ orchards_04 = {
 
 orchards_05 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_orchards_requirement_terrain = yes
@@ -870,6 +954,10 @@ orchards_05 = {
 orchards_06 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_orchards_requirement_terrain = yes
 	}
@@ -910,6 +998,10 @@ orchards_06 = {
 
 orchards_07 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_orchards_requirement_terrain = yes
@@ -953,6 +1045,10 @@ orchards_07 = {
 orchards_08 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_orchards_requirement_terrain = yes
 	}
@@ -995,6 +1091,10 @@ orchards_08 = {
 farm_estates_05 = {
 	construction_time = slow_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_farm_estates_requirement_terrain = yes
 	}
@@ -1032,6 +1132,10 @@ farm_estates_05 = {
 
 farm_estates_06 = {
 	construction_time = slow_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_farm_estates_requirement_terrain = yes
@@ -1071,6 +1175,10 @@ farm_estates_06 = {
 
 farm_estates_07 = {
 	construction_time = slow_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_farm_estates_requirement_terrain = yes
@@ -1112,6 +1220,10 @@ farm_estates_07 = {
 farm_estates_08 = {
 	construction_time = slow_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_farm_estates_requirement_terrain = yes
 	}
@@ -1150,6 +1262,10 @@ farm_estates_08 = {
 
 military_camps_01 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_military_camps_requirement_terrain = yes
@@ -1220,6 +1336,10 @@ military_camps_01 = {
 military_camps_02 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_military_camps_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -1256,6 +1376,10 @@ military_camps_02 = {
 
 military_camps_03 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_military_camps_requirement_terrain = yes
@@ -1296,6 +1420,10 @@ military_camps_03 = {
 
 military_camps_04 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_military_camps_requirement_terrain = yes
@@ -1338,6 +1466,10 @@ military_camps_04 = {
 military_camps_05 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_military_camps_requirement_terrain = yes
 	}
@@ -1379,6 +1511,10 @@ military_camps_05 = {
 
 military_camps_06 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_military_camps_requirement_terrain = yes
@@ -1426,6 +1562,10 @@ military_camps_06 = {
 military_camps_07 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_military_camps_requirement_terrain = yes
 	}
@@ -1471,6 +1611,10 @@ military_camps_07 = {
 
 military_camps_08 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_military_camps_requirement_terrain = yes
@@ -1520,6 +1664,10 @@ military_camps_08 = {
 regimental_grounds_01 = {
 	construction_time = slow_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_regimental_grounds_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -1555,6 +1703,10 @@ regimental_grounds_01 = {
 
 regimental_grounds_02 = {
 	construction_time = slow_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_regimental_grounds_requirement_terrain = yes
@@ -1592,6 +1744,10 @@ regimental_grounds_02 = {
 
 regimental_grounds_03 = {
 	construction_time = slow_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_regimental_grounds_requirement_terrain = yes
@@ -1637,6 +1793,10 @@ regimental_grounds_03 = {
 regimental_grounds_04 = {
 	construction_time = slow_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_regimental_grounds_requirement_terrain = yes
 	}
@@ -1681,6 +1841,10 @@ regimental_grounds_04 = {
 
 regimental_grounds_05 = {
 	construction_time = slow_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_regimental_grounds_requirement_terrain = yes
@@ -1728,6 +1892,10 @@ regimental_grounds_05 = {
 regimental_grounds_06 = {
 	construction_time = slow_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_regimental_grounds_requirement_terrain = yes
 	}
@@ -1773,6 +1941,10 @@ regimental_grounds_06 = {
 
 regimental_grounds_07 = {
 	construction_time = slow_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_regimental_grounds_requirement_terrain = yes
@@ -1820,6 +1992,10 @@ regimental_grounds_07 = {
 
 regimental_grounds_08 = {
 	construction_time = slow_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_regimental_grounds_requirement_terrain = yes
@@ -1869,6 +2045,10 @@ regimental_grounds_08 = {
 ramparts_01 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_ramparts_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -1908,6 +2088,10 @@ ramparts_01 = {
 ramparts_02 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_ramparts_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -1940,6 +2124,10 @@ ramparts_02 = {
 
 ramparts_03 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_ramparts_requirement_terrain = yes
@@ -1977,6 +2165,10 @@ ramparts_03 = {
 
 ramparts_04 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_ramparts_requirement_terrain = yes
@@ -2017,6 +2209,10 @@ ramparts_04 = {
 
 ramparts_05 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_ramparts_requirement_terrain = yes
@@ -2060,6 +2256,10 @@ ramparts_05 = {
 ramparts_06 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_ramparts_requirement_terrain = yes
 	}
@@ -2102,6 +2302,10 @@ ramparts_06 = {
 
 ramparts_07 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_ramparts_requirement_terrain = yes
@@ -2147,6 +2351,10 @@ ramparts_07 = {
 ramparts_08 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_ramparts_requirement_terrain = yes
 	}
@@ -2190,6 +2398,10 @@ ramparts_08 = {
 
 outposts_01 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_outposts_requirement_terrain = yes
@@ -2239,6 +2451,10 @@ outposts_01 = {
 outposts_02 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_outposts_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -2272,6 +2488,10 @@ outposts_02 = {
 
 outposts_03 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_outposts_requirement_terrain = yes
@@ -2310,6 +2530,10 @@ outposts_03 = {
 
 outposts_04 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_outposts_requirement_terrain = yes
@@ -2350,6 +2574,10 @@ outposts_04 = {
 
 outposts_05 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_outposts_requirement_terrain = yes
@@ -2392,6 +2620,10 @@ outposts_05 = {
 outposts_06 = {
 	construction_time = quick_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_outposts_requirement_terrain = yes
 	}
@@ -2433,6 +2665,10 @@ outposts_06 = {
 
 outposts_07 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_outposts_requirement_terrain = yes
@@ -2477,6 +2713,10 @@ outposts_07 = {
 
 outposts_08 = {
 	construction_time = quick_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_outposts_requirement_terrain = yes
@@ -2523,6 +2763,10 @@ outposts_08 = {
 barracks_01 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -2563,6 +2807,10 @@ barracks_01 = {
 barracks_02 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -2594,6 +2842,10 @@ barracks_02 = {
 
 barracks_03 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
@@ -2634,6 +2886,10 @@ barracks_03 = {
 barracks_04 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
 	}
@@ -2672,6 +2928,10 @@ barracks_04 = {
 
 barracks_05 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
@@ -2712,6 +2972,10 @@ barracks_05 = {
 barracks_06 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
 	}
@@ -2750,6 +3014,10 @@ barracks_06 = {
 
 barracks_07 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
@@ -2794,6 +3062,10 @@ barracks_07 = {
 barracks_08 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_barracks_requirement_terrain = yes
 	}
@@ -2837,6 +3109,10 @@ barracks_08 = {
 camel_farms_01 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_camel_farms_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -2874,6 +3150,10 @@ camel_farms_01 = {
 camel_farms_02 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_camel_farms_requirement_terrain = yes
 		building_requirement_castle_city_church = { LEVEL = 01 }
@@ -2910,6 +3190,10 @@ camel_farms_02 = {
 
 camel_farms_03 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_camel_farms_requirement_terrain = yes
@@ -2951,6 +3235,10 @@ camel_farms_03 = {
 
 camel_farms_04 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_camel_farms_requirement_terrain = yes
@@ -2996,6 +3284,10 @@ camel_farms_04 = {
 
 camel_farms_05 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_camel_farms_requirement_terrain = yes
@@ -3043,6 +3335,10 @@ camel_farms_05 = {
 camel_farms_06 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_camel_farms_requirement_terrain = yes
 	}
@@ -3089,6 +3385,10 @@ camel_farms_06 = {
 
 camel_farms_07 = {
 	construction_time = standard_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_camel_farms_requirement_terrain = yes
@@ -3138,6 +3438,10 @@ camel_farms_07 = {
 camel_farms_08 = {
 	construction_time = standard_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_camel_farms_requirement_terrain = yes
 	}
@@ -3185,6 +3489,10 @@ camel_farms_08 = {
 hill_forts_04 = {
 	construction_time = slow_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_hill_forts_requirement_terrain = yes
 	}
@@ -3225,6 +3533,10 @@ hill_forts_04 = {
 hill_forts_05 = {
 	construction_time = slow_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_hill_forts_requirement_terrain = yes
 	}
@@ -3264,6 +3576,10 @@ hill_forts_05 = {
 
 hill_forts_06 = {
 	construction_time = slow_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_hill_forts_requirement_terrain = yes
@@ -3306,6 +3622,10 @@ hill_forts_06 = {
 hill_forts_07 = {
 	construction_time = slow_construction_time
 
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
+
 	can_construct_potential = {
 		building_hill_forts_requirement_terrain = yes
 	}
@@ -3346,6 +3666,10 @@ hill_forts_07 = {
 
 hill_forts_08 = {
 	construction_time = slow_construction_time
+
+	is_enabled = {
+		building_disable_if_vastly_over_domain_limit_trigger = yes
+	}
 
 	can_construct_potential = {
 		building_hill_forts_requirement_terrain = yes

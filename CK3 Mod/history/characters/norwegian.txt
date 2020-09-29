@@ -5169,3 +5169,18 @@ norwegian.1002 = {	#Fictional holder to allow barony placement.
 		death = yes
 	}
 }
+
+}
+
+norwegian.1003 = {	#Fictional
+	name = "Tore"
+	religion = norse_pagan
+	culture = norwegian
+	dynasty = norwegian_ormslev
+	1039.1.1 = {
+		birth = yes
+	}
+	1090.1.1 = {
+		death = yes
+	}
+}

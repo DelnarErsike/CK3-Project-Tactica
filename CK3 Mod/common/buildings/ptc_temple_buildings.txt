@@ -196,7 +196,7 @@ temple_01 = {
 	can_construct_showing_failures_only = {
 		building_requirement_tribal_holding_in_county = no
 	}
-	cost_gold = 500
+	cost_gold = main_building_tier_1_cost
 	next_building = temple_02
 	
 	garrison = normal_building_garrison_tier_1
@@ -212,7 +212,7 @@ temple_01 = {
 	type_icon = "icon_building_monastic_schools.dds"
 
 	on_complete = {
-		county.holder = { add_piety = medium_piety_gain }
+		county.holder = { add_piety = massive_piety_gain }
 
 		#to give follow-up to the vassal.1001 event
 		hidden_effect = {
@@ -436,7 +436,7 @@ temple_02 = {
 			has_innovation = innovation_manorialism
 		}
 	}
-	cost_gold = 500
+	cost_gold = main_building_tier_2_cost
 	next_building = temple_03
 	
 	garrison = normal_building_garrison_tier_3
@@ -640,7 +640,7 @@ temple_03 = {
 			has_innovation = innovation_windmills
 		}
 	}
-	cost_gold = 500
+	cost_gold = main_building_tier_3_cost
 	next_building = temple_04
 	
 	garrison = normal_building_garrison_tier_5
@@ -843,7 +843,7 @@ temple_04 = {
 			has_innovation = innovation_cranes
 		}
 	}
-	cost_gold = 500
+	cost_gold = main_building_tier_4_cost
 	
 	garrison = normal_building_garrison_tier_7
 	character_modifier = {
