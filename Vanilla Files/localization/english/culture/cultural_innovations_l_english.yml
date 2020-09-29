@@ -7,6 +7,7 @@
  multiple_claim_wars_others:0 "Can press multiple [claims|E] for another character in a single war"
  fabricate_claim_speed:0 ""Fabricate Claim on County" [councillor_task|E] Speed: #P +50%#!"
  promote_culture_speed:0 ""Promote Culture" [councillor_task|E] Speed: #P +15%#!"
+ same_culture_group_reduced_factionalism:0 "[vassals|E] of your [culture_group|E] are less likely to join [independence_factions|E]"
  reduce_develop_county_penalty_01:0 "Counties now reach the maximum [existing_development|E] penalty at 20 [development|E]"
  reduce_develop_county_penalty_02:0 "Counties now reach the maximum [existing_development|E] penalty at 35 [development|E]"
  reduce_develop_county_penalty_03:0 "Counties now reach the maximum [existing_development|E] penalty at 55 [development|E]"
@@ -248,7 +249,7 @@
  innovation_standing_armies_desc:0 "Military levies provide us with large numbers of soldiers, yet no matter how well we try to train and equip them they will always be inferior to professional soldiers. Establishing a large standing army will ensure the interests of our realm are enforced by the best fighters around."
 
  innovation_sappers:0 "Sappers"
- innovation_sappers_desc:0 "It does not matter how strong a our enemy's walls are if the earth beneath them can be dug through. Employing sappers to undermine enemy fortifications is an effective way to breach even the toughest defenses."
+ innovation_sappers_desc:0 "It does not matter how strong our enemy's walls are if the earth beneath them can be dug through. Employing sappers to undermine enemy fortifications is an effective way to breach even the toughest defenses."
 
  innovation_plate_armor:0 "Plate Armor"
  innovation_plate_armor_desc:0 "The ultimate form of personal protection, a well-crafted suit of plate armor has articulated joints which give it a superior range of motion to earlier armors, while being all but impenetrable to enemy weapons."
@@ -285,7 +286,7 @@
  innovation_wierdijks_desc:0 "Building strong and reliable dikes is an essential task if we wish to live and prosper within the low countries. New techniques of reinforcing earthen dikes with seaweed mats will increase their strength and durability."
 
  innovation_condottieri:0 "Condottieri"
- innovation_condottieri_desc:0 "Being both wealthy and centrally located, Italy has become a major center for mercenary companies to travel to when not on active campaign. Since they are already here, we should be able to negotiate a better rates for them than they would normally charge."
+ innovation_condottieri_desc:0 "Being both wealthy and centrally located, Italy has become a major center for mercenary companies to travel to when not on active campaign. Since they are already here, we should be able to negotiate a better rate for them than they would normally charge."
 
  innovation_deccan_unity:0 "Deccan Unity"
  innovation_deccan_unity_desc:0 "The influx of new beliefs and religions into our society has made it clear that our past focus on regionalism has been a mistake. We should band together with others of our faith and ensure a strong and enduring state that can stand up to external pressures."

@@ -1,11 +1,4 @@
-# Tibetan Group
-# Zhangzhun
-# Tsangpa
-# Lhomon
-# Bodpa
-# Sumpa
-
-# Kirati - In separate file
+# Kirati - part of Tibetan Group
 
 867.1.1 = {
 	discover_innovation = innovation_barracks
@@ -15,6 +8,8 @@
 	discover_innovation = innovation_development_01
 	discover_innovation = innovation_currency_01
 	discover_innovation = innovation_ledger
+	#
+	discover_innovation = innovation_elephantry
 }
 
 950.1.1 = {

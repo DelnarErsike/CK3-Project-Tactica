@@ -924,3 +924,13 @@ comfortable_ai_gold_value_for_tyranny_wars = {
 	multiply = 3
 	min = 25
 }
+
+uncomfortable_ai_bancruptcy_for_wars = {
+	value = yearly_character_income
+	multiply = -2
+}
+
+very_uncomfortable_ai_bancruptcy_for_wars = {
+	value = yearly_character_income
+	multiply = -4
+}

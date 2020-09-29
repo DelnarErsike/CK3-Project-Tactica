@@ -37,12 +37,14 @@ window = {
 		size = { 100% 100% }
 		margin = { 0 26 }
 		margin_right = 20
+		
+		using = Window_Background
+
 
 		widget = {
 			size = { 100% 100% }
 
-			using = Window_Background
-			using = Window_Decoration_Thin
+		#	using = Window_Decoration_Thin
 
 			### WINDOW CONTENT
 			vbox = {
@@ -201,10 +203,10 @@ window = {
 							texture = "gfx/interface/illustrations/event_scenes/battlefield.dds"
 							margin = { -5 0 }
 							fittype = end
-							alpha = 0.8
+							alpha = 0.5
 
 							modify_texture = {
-								texture = "gfx/interface/tiles/stretch_bottom_fade.dds"
+								texture = "gfx/interface/component_masks/mask_fade_vertical_up.dds"
 								blend_mode = alphamultiply
 							}
 						}
@@ -225,6 +227,7 @@ window = {
 										datacontext = "[MilitaryItem.GetComposition]"
 										layoutpolicy_horizontal = expanding
 										margin = { 10 5 }
+										tooltip = "[ArmyComposition.GetArmyCompositionTooltip]"
 
 										background = {
 											using = Background_Area
@@ -233,7 +236,6 @@ window = {
 										hbox = {
 											layoutpolicy_horizontal = expanding
 											spacing = 10
-											tooltip = "[ArmyComposition.GetArmyCompositionTooltip]"
 
 											text_single = {
 												text = "MV_TOTAL_SOLDIERS"
@@ -325,7 +327,7 @@ window = {
 										}
 
 										background = {
-											texture = "gfx/interface/tiles/tile_vignette_3px.dds"
+											texture = "gfx/interface/component_tiles/tile_vignette_3px.dds"
 											spriteType = Corneredtiled
 											spriteborder = { 5 5 }
 											margin = { -2 -2 }
@@ -412,7 +414,7 @@ window = {
 										}
 
 										background = {
-											texture = "gfx/interface/tiles/tile_vignette_3px.dds"
+											texture = "gfx/interface/component_tiles/tile_vignette_3px.dds"
 											spriteType = Corneredtiled
 											spriteborder = { 5 5 }
 											margin = { -2 -2 }
@@ -437,7 +439,7 @@ window = {
 												layoutpolicy_horizontal = expanding
 												icon = {
 													name = "icon_knight"
-													texture = "gfx/interface/icons/knight_icon_small.dds"
+													texture = "gfx/interface/icons/icon_knight_small.dds"
 													size = { 30 30 }
 												}
 
@@ -520,7 +522,7 @@ window = {
 												position = { 10 0 }
 												size = { 29 29 }
 
-												texture = "gfx/interface/icons/icon_warning.dds"
+												texture = "gfx/interface/icons/symbols/icon_warning.dds"
 											}
 										}
 									}
@@ -552,7 +554,7 @@ window = {
 													}
 
 													background = {
-														texture = "gfx/interface/tiles/tile_vignette_3px.dds"
+														texture = "gfx/interface/component_tiles/tile_vignette_3px.dds"
 														spriteType = Corneredtiled
 														spriteborder = { 5 5 }
 														margin = { -2 -2 }
@@ -787,7 +789,7 @@ window = {
 										onclick = "[RallyPointItem.OnClick]"
 										tooltip = "MV_RALLY_POINT_TT"
 										using = tooltip_ne
-										texture = "gfx/interface/edit_banners/banner_icon.dds"
+										texture = "gfx/interface/window_military/banner_icon.dds"
 										tintcolor = "[RallyPoint.GetColor]"
 									}
 								}
@@ -824,17 +826,20 @@ window = {
 
 							hbox = {
 								layoutpolicy_horizontal = expanding
-								tooltip = "[MilitaryView.GetMilitaryReinforcementCostTooltip]"
 
-								button_checkbox = {
-									checked = "[MilitaryView.IsMilitaryReinforcementsEnabled]"
+								button_checkbox_label = {
 									onclick = "[MilitaryView.OnMilitaryReinforcementClick]"
-								}
+									tooltip = "[MilitaryView.GetMilitaryReinforcementCostTooltip]"
 
-								text_single = {
-									margin_left = 5
-									text = "MONTHLY_REINFORCEMENT_COST_LABEL"
-									align = nobaseline
+									blockoverride "checkbox"
+									{
+										checked = "[MilitaryView.IsMilitaryReinforcementsEnabled]"
+									}
+
+									blockoverride "text"
+									{
+										text = "MONTHLY_REINFORCEMENT_COST_LABEL"
+									}
 								}
 
 								expand = {}
@@ -863,7 +868,7 @@ window = {
 									icon = {
 										size = { 28 28 }
 										visible = "[MilitaryView.HasEmbarkedArmies]"
-										texture = "gfx/interface/mapitems/naval_transportation.dds"
+										texture = "gfx/interface/icons/map_icons/naval_transportation.dds"
 										tooltip = "MV_EMBARKED_TT"
 									}
 
@@ -1010,7 +1015,7 @@ window = {
 						framesize = { 1200 848 }
 
 						modify_texture = {
-							texture = "gfx/interface/tiles/stretch_bottom_fade.dds"
+							texture = "gfx/interface/component_masks/mask_fade_vertical_up.dds"
 							blend_mode = alphamultiply
 						}
 					}
@@ -1083,7 +1088,7 @@ window = {
 						alpha = 0.8
 
 						modify_texture = {
-							texture = "gfx/interface/tiles/stretch_bottom_fade.dds"
+							texture = "gfx/interface/component_masks/mask_fade_vertical_up.dds"
 							blend_mode = alphamultiply
 						}
 					}
@@ -1128,15 +1133,33 @@ window = {
 							}
 
 							item = {
-								button_holyorder_list_item = {
-									datacontext = "[HiredTroopItem.GetHolyOrder]"
+								vbox = {
 									layoutpolicy_horizontal = expanding
-
-									blockoverride "HiredTroopRegimentTypesDataModel"
-									{
-										datamodel = "[HiredTroopItem.GetRegiments]"
+									
+									button_holyorder_list_item = {
+										visible = "[Not(And(HolyOrder.IsHired, HolyOrder.IsPledgedToGreatHolyWar))]"
+	
+										datacontext = "[HiredTroopItem.GetHolyOrder]"
+										layoutpolicy_horizontal = expanding
+	
+										blockoverride "HiredTroopRegimentTypesDataModel"
+										{
+											datamodel = "[HiredTroopItem.GetRegiments]"
+										}
 									}
-								}
+	
+									button_holyorder_list_item = {
+										visible = "[And(HolyOrder.IsHired, HolyOrder.IsPledgedToGreatHolyWar)]"
+										size = { 430 120 }
+										datacontext = "[HiredTroopItem.GetHolyOrder]"
+										layoutpolicy_horizontal = expanding
+	
+										blockoverride "HiredTroopRegimentTypesDataModel"
+										{
+											datamodel = "[HiredTroopItem.GetRegiments]"
+										}
+									}
+								}	
 							}
 						}
 					}
@@ -1180,6 +1203,7 @@ types MilitaryView
 
 				text_single = {
 					text = "[MilitaryViewEventTroop.GetName]"
+					default_format = "#high"
 				}
 
 				expand = {}
@@ -1226,8 +1250,6 @@ types MilitaryView
 
 						item = {
 							container = {
-								datacontext = "[RegimentRef.Get]"
-
 								highlight_icon = {
 									size = { 40 40 }
 									texture = "[Regiment.GetMAAType.GetIcon]"
@@ -1378,7 +1400,6 @@ types HiredTroops
 
 							text_single = {
 								name = "hired_by_label"
-								visible = "[MercenaryCompany.IsHired]"
 								align = left|bottom
 								text = "[SelectLocalization( MercenaryCompany.IsHiredByLocalPlayer, 'HIRED_TROOPS_VIEW_HIRED_BY_ME_LEFT', 'HIRED_TROOPS_VIEW_NOT_AVAILABLE' )]"
 							}
@@ -1426,7 +1447,6 @@ types HiredTroops
 						item = {
 							icon = {
 								name = "men_at_arms_icon"
-								datacontext = "[RegimentRef.Get]"
 								size = { 35 35 }
 								texture = "[Regiment.GetMAAType.GetIcon]"
 								tooltipwidget = regiment_container_tooltip
@@ -1442,7 +1462,7 @@ types HiredTroops
 						name = "bankrupcy"
 						visible = "[MercenaryCompany.WillGoInBankruptcy(GetPlayer.Self)]"
 						size = { 30 30 }
-						texture = "gfx/interface/icons/icon_warning.dds"
+						texture = "gfx/interface/icons/symbols/icon_warning.dds"
 						tooltip = "[SelectLocalization(MercenaryCompany.IsHiredByLocalPlayer, 'MERCENARY_COMPANY_COST_BANKRUPTCY_HIRED', 'MERCENARY_COMPANY_COST_BANKRUPTCY')]"
 						using = tooltip_se
 					}
@@ -1451,7 +1471,7 @@ types HiredTroops
 						name = "debt"
 						visible = "[MercenaryCompany.WillGoInDebt(GetPlayer.Self)]"
 						size = { 30 30 }
-						texture = "gfx/interface/icons/icon_alert.dds"
+						texture = "gfx/interface/icons/symbols/icon_alert.dds"
 						tooltip = "[SelectLocalization(MercenaryCompany.IsHiredByLocalPlayer, 'MERCENARY_COMPANY_COST_DEBT_HIRED', 'MERCENARY_COMPANY_COST_DEBT')]"
 						using = tooltip_se
 					}
@@ -1475,6 +1495,8 @@ types HiredTroops
 	}
 
 	type button_holyorder_list_item = button_standard_clean {
+		enabled = "[Or(Not(HolyOrder.IsHired), HolyOrder.IsHiredByLocalPlayer)]"
+		
 		size = { 430 110 }
 
 		tooltip = "HIRED_TROOPS_VIEW_LIST_HO_BUTTON_TOOLTIP"
@@ -1595,7 +1617,6 @@ types HiredTroops
 					item = {
 
 						icon = {
-							datacontext = "[RegimentRef.Get]"
 							datacontext = "[Regiment.GetMAAType]"
 							name = "men_at_arms_icon"
 							size = { 35 35 }

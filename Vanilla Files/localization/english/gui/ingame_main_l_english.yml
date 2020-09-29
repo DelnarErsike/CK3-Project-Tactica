@@ -24,7 +24,8 @@
  MAPMODE_DJ_DUCHIES:0 "#T Duchy Titles\n#!Shows [duchy|E] [titles|E] and their [de_jure|E] lands on the map."
  MAPMODE_COUNTIES:1 "#T #V Counties#! Map Mode#!"
  MAPMODE_BARONIES:1 "#T #V Baronies#! Map Mode#!"
- MAPMODE_PLAYERS:0 "#T Players\n#!Shows all multiplayer participants on the map."
+ MAPMODE_PLAYERS_LABEL:0 "Players"
+ MAPMODE_PLAYERS:1 "#T $MAPMODE_PLAYERS_LABEL$\n#!Shows all multiplayer participants on the map."
  MAPMODE_RELIGIONS:0 "#T Faiths\n#!Shows the [faith|E] of each [county|E] on the map.\nIn striped areas the County and the [top_liege|E] have different Faiths.\nSelect a Faith to see its [holy_sites|E]."
  MAPMODE_SIMPLE_TERRAIN_NAME:0 "Terrain"
  MAPMODE_SIMPLE_TERRAIN:3 "#T $MAPMODE_SIMPLE_TERRAIN_NAME$\n#!Shows the [terrain|E] of every Barony on the map."
@@ -45,7 +46,7 @@
  DECREASE_GAME_SPEED_TO:0 "Decrease speed to $PREV_SPEED$"
  PAUSED_BY:0 "by [GetPausedBy]"
  CLICK_TO_UNPAUSE:0 "#I Click to unpause#!"
- UNPAUSE_GAME:0 "#T Game is #V Paused#! [SelectLocalization( StringIsEmpty( GetPausedBy ), '', 'PAUSED_BY' )]\n#![SelectLocalization( Or( Or( Not( GameIsMultiplayer ), CanAnyoneUnpause ), IsPausedByMe ), 'CLICK_TO_UNPAUSE', '' )]"
+ UNPAUSE_GAME:1 "#T Game is #V Paused#! [SelectLocalization( Or( StringIsEmpty( GetPausedBy ), Not( GameHasMultiplePlayers ) ), '', 'PAUSED_BY' )]\n#![SelectLocalization( Or( Or( Not( GameHasMultiplePlayers ), CanAnyoneUnpause ), IsPausedByMe ), 'CLICK_TO_UNPAUSE', '' )]"
  UNPAUSE_GAME_OVER:0 "#T Game is Paused#! \n#X Cannot unpause after Game Over#!"
  GAME_OVER_END_DATE:0 "Reached the [end_date|E]"
  GAME_OVER_NON_DYNASTIC_HEIR:0 "No valid heir of your dynasty"
@@ -99,17 +100,17 @@
  PRESTIGE_LEVEL_LABEL_3:1 "@prestige_level_3_icon! [GetModifier( 'prestige_level_3' ).GetNameWithTooltip|L]"
  PRESTIGE_LEVEL_LABEL_4:1 "@prestige_level_4_icon! [GetModifier( 'prestige_level_4' ).GetNameWithTooltip|L]"
  PRESTIGE_LEVEL_LABEL_5:1 "@prestige_level_5_icon! [GetModifier( 'prestige_level_5' ).GetNameWithTooltip|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_0:0 "@prestige_level_0_icon! [dynasty_prestige_level_0|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_1:0 "@prestige_level_1_icon! [dynasty_prestige_level_1|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_2:0 "@prestige_level_2_icon! [dynasty_prestige_level_2|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_3:0 "@prestige_level_3_icon! [dynasty_prestige_level_3|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_4:0 "@prestige_level_4_icon! [dynasty_prestige_level_4|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_5:0 "@prestige_level_5_icon! [dynasty_prestige_level_5|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_6:0 "@prestige_level_6_icon! [dynasty_prestige_level_6|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_7:0 "@prestige_level_7_icon! [dynasty_prestige_level_7|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_8:0 "@prestige_level_8_icon! [dynasty_prestige_level_8|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_9:0 "@prestige_level_9_icon! [dynasty_prestige_level_9|L]"
- DYNASTY_PRESTIGE_LEVEL_LABEL_10:0 "@prestige_level_10_icon! [dynasty_prestige_level_10|L]"
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_0:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_1:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_2:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_3:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_4:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_5:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_6:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_7:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_8:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_9:0 "" Delete this
+ #DYNASTY_PRESTIGE_LEVEL_LABEL_10:0 "" Delete this
  PIETY_PROGRESS_TOOLTIP:0 "Progress: $VALUE|0V$/$MAX|0$ towards the next [piety_level|E]"
  PRESTIGE_PROGRESS_TOOLTIP:0 "Progress: $VALUE|0V$/$MAX|0$ towards the next [prestige_level|E]"
  DYNASTY_PRESTIGE_PROGRESS_TOOLTIP:0 "Progress: $VALUE|0V$/$MAX|0$ towards the next [dynasty_prestige_level|E]"

@@ -15,16 +15,17 @@ window = {
 	datacontext = "[Province.GetCounty]"
 
 	background = {
-		texture = "gfx/interface/tiles/tile_window_background_subwindow.dds"
+		texture = "gfx/interface/component_tiles/tile_window_background_subwindow.dds"
 		spriteType = Corneredtiled
 		spriteborder = { 18 18 }
 		margin = { -23 -17 }
 		margin_left = 20
 		margin_bottom = 20
-
+		texture_density = 2
+		
 		modify_texture = {
 			name = "overlay"
-			texture = "gfx/interface/tiles/tile_overlay_effect_02.dds"
+			texture = "gfx/interface/component_overlay/overlay_effect.dds"
 			spriteType = Corneredstretched
 			spriteborder = { 0 0 }
 			blend_mode = overlay
@@ -198,6 +199,7 @@ window = {
 
 					coa_title_tiny_crown = {
 						visible = "[GreaterThan_int32( Title.GetTierFrame, '(int32)3' )]"
+						using = tooltip_se
 					}
 				}
 			}
@@ -236,7 +238,7 @@ window = {
 					icon = {
 						size = { 70 70 }
 						name = "war_icon"
-						texture = "gfx/interface/war_overview/war_icon.dds"
+						texture = "gfx/interface/icons/war_status/war_icon.dds"
 						parentanchor = center
 					}
 
@@ -275,18 +277,18 @@ window = {
 				background = {
 					name = "Held_directly_by_me"
 					visible = "[ObjectsEqual( Character.Self, GetPlayer )]"
-					texture = "gfx/interface/tiles/tile_relation_pattern_1.dds"
+					texture = "gfx/interface/component_masks/patterns/mask_pattern_04.dds"
 					spriteType = Corneredtiled
 					margin = { -7 -7 }
 					using = Color_Green_Transparent
 
 					modify_texture = {
-						texture = "gfx/interface/tiles/tile_fade_mask.dds"
+						texture = "gfx/interface/component_masks/mask_fade_horizontal_right.dds"
 						blend_mode = alphamultiply
 					}
 
 					modify_texture = {
-						texture = "gfx/interface/components_masks/mask_rough_edges.dds"
+						texture = "gfx/interface/component_masks/mask_rough_edges.dds"
 						spriteType = Corneredtiled
 						spriteborder = { 20 20 }
 						texture_density = 2
@@ -297,18 +299,18 @@ window = {
 				background = {
 					name = "Held_by_someone_below_me"
 					visible = "[Character.IsOtherLiegeOrAbove( GetPlayer )]"
-					texture = "gfx/interface/tiles/tile_relation_pattern_1.dds"
+					texture = "gfx/interface/component_masks/patterns/mask_pattern_04.dds"
 					spriteType = Corneredtiled
 					margin = { -7 -7 }
 					using = Color_Blue_Transparent
 
 					modify_texture = {
-						texture = "gfx/interface/tiles/tile_fade_mask.dds"
+						texture = "gfx/interface/component_masks/mask_fade_horizontal_right.dds"
 						blend_mode = alphamultiply
 					}
 
 					modify_texture = {
-						texture = "gfx/interface/components_masks/mask_rough_edges.dds"
+						texture = "gfx/interface/component_masks/mask_rough_edges.dds"
 						spriteType = Corneredtiled
 						spriteborder = { 20 20 }
 						texture_density = 2
@@ -319,18 +321,18 @@ window = {
 				background = {
 					name = "Held_under_my_Top_Liege,_but_Not_Me"
 					visible = "[And(And(Not( ObjectsEqual( Character.Self, GetPlayer )),Not(Character.IsOtherLiegeOrAbove( GetPlayer ))),ObjectsEqual( Character.GetTopLiege, GetPlayer.GetTopLiege ))]"
-					texture = "gfx/interface/tiles/tile_relation_pattern_1.dds"
+					texture = "gfx/interface/component_masks/patterns/mask_pattern_04.dds"
 					spriteType = Corneredtiled
 					margin = { -7 -7 }
 					using = Color_Bright_Yellow_Transparent
 
 					modify_texture = {
-						texture = "gfx/interface/tiles/tile_fade_mask.dds"
+						texture = "gfx/interface/component_masks/mask_fade_horizontal_right.dds"
 						blend_mode = alphamultiply
 					}
 
 					modify_texture = {
-						texture = "gfx/interface/components_masks/mask_rough_edges.dds"
+						texture = "gfx/interface/component_masks/mask_rough_edges.dds"
 						spriteType = Corneredtiled
 						spriteborder = { 20 20 }
 						texture_density = 2
@@ -445,7 +447,7 @@ window = {
 						onclick = "[HoldingView.OnGotoFaction]"
 						tooltip = "COUNTY_IN_FACTION_TOOLTIP"
 						size = { 20 20 }
-						texture = "gfx/interface/icons/icon_warning.dds"
+						texture = "gfx/interface/icons/symbols/icon_warning.dds"
 					}
 
 					text_single = {
@@ -488,7 +490,7 @@ window = {
 						onclick = "[DefaultOnCultureClick(Culture.GetID)]"
 
 						text_single = {
-							text = "[Culture.GetNameNoTooltip]"
+							text = "CULTURE_COUNTY_WINDOW"
 							default_format = "#high"
 
 							background = {
@@ -652,7 +654,7 @@ window = {
 				alpha = 0.8
 
 				modify_texture = {
-					texture = "gfx/interface/tiles/holding_view_illustration_mask.dds"
+					texture = "gfx/interface/window_county/mask_holding_illustration.dds"
 					blend_mode = alphamultiply
 					alpha = 0.95
 				}
@@ -663,7 +665,7 @@ window = {
 				alpha = 0.7
 
 				modify_texture = {
-					texture = "gfx/interface/tiles/holding_view_illustration_mask.dds"
+					texture = "gfx/interface/window_county/mask_holding_illustration.dds"
 					blend_mode = alphamultiply
 					alpha = 0.95
 				}
@@ -712,7 +714,7 @@ window = {
 
 			background = {
 				visible = "[And(NotEqualTo_uint32( HoldingView.GetCountyTitle.GetHolder.GetID, HoldingView.GetTitle.GetLesseeOrHolder.GetID ), HoldingView.GetTitle.HasHolder)]"
-				texture = "gfx/interface/buttons/background_frame.dds"
+				texture = "gfx/interface/component_masks/mask_frame.dds"
 				spriteType = Corneredstretched
 				spriteborder = { 15 15 }
 				using = Color_Blue
@@ -726,7 +728,7 @@ window = {
 			background = {
 				#visible = "[And(NotEqualTo_uint32( HoldingView.GetCountyTitle.GetHolder.GetID, HoldingView.GetTitle.GetLesseeOrHolder.GetID ), HoldingView.GetTitle.HasHolder)]"
 				visible = no
-				texture = "gfx/interface/buttons/background_frame.dds"
+				texture = "gfx/interface/component_masks/mask_frame.dds"
 				spriteType = Corneredstretched
 				spriteborder = { 15 15 }
 				using = Color_Red
@@ -739,7 +741,7 @@ window = {
 			background = {
 				#visible = "[And(NotEqualTo_uint32( HoldingView.GetCountyTitle.GetHolder.GetID, HoldingView.GetTitle.GetLesseeOrHolder.GetID ), HoldingView.GetTitle.HasHolder)]"
 				visible = no
-				texture = "gfx/interface/buttons/background_frame.dds"
+				texture = "gfx/interface/component_masks/mask_frame.dds"
 				spriteType = Corneredstretched
 				spriteborder = { 15 15 }
 				using = Color_Green
@@ -836,7 +838,7 @@ window = {
 								name = "set_realm_capital_button"
 								visible = "[HoldingView.PotentialSetRealmCapital]"
 								position = { -3 5 }
-								texture = "gfx/interface/buttons/button_icons/move_capital.dds"
+								texture = "gfx/interface/icons/flat_icons/move_capital.dds"
 								onclick = "[HoldingView.SetRealmCapital]"
 								tooltip = "[HoldingView.GetSetRealmCapitalTooltip]"
 								enabled = "[HoldingView.CanSetRealmCapital]"
@@ -846,7 +848,7 @@ window = {
 								name = "set_county_capital_button"
 								visible = "[HoldingView.CanSetCountyCapital]"
 								position = { -3 5 }
-								texture = "gfx/interface/buttons/button_icons/move_capital.dds"
+								texture = "gfx/interface/icons/flat_icons/move_capital.dds"
 								onclick = "[HoldingView.SetCountyCapital]"
 								tooltip = "SET_COUNTY_CAPITAL_TOOLTIP"
 							}
@@ -885,48 +887,50 @@ window = {
 
 				background = {
 					visible = "[And(NotEqualTo_uint32( HoldingView.GetCountyTitle.GetHolder.GetID, HoldingView.GetTitle.GetLesseeOrHolder.GetID ), HoldingView.GetTitle.HasHolder)]"
-					texture = "gfx/interface/buttons/background_pattern.dds"
+					texture = "gfx/interface/component_masks/patterns/mask_pattern_02.dds"
 					spriteType = Corneredtiled
-					color = { 0.4 0.5 0.6 0.6 }
+					using = Color_Blue
+					alpha = 0.6
 					margin_bottom = 10
 					margin_left = 5
 
 					modify_texture = {
-						texture = "gfx/interface/tiles/tile_fade_mask.dds"
+						texture = "gfx/interface/component_masks/mask_fade_horizontal_right.dds"
 						blend_mode = alphamultiply
 						alpha = 0.9
 					}
 
 					modify_texture = {
-						texture = "gfx/interface/buttons/background_alpha.dds"
+						texture = "gfx/interface/component_masks/mask_texture_01.dds"
 						spriteType = Corneredtiled
 						spriteborder = { 15 15 }
 						blend_mode = alphamultiply
 					}
 
 					modify_texture = {
-						texture = "gfx/interface/buttons/background_button_fade.dds"
+						texture = "gfx/interface/component_masks/mask_fade_vertical_up.dds"
 						blend_mode = alphamultiply
 					}
 				}
 
 				background = {
 					visible = "[And(NotEqualTo_uint32( HoldingView.GetCountyTitle.GetHolder.GetID, HoldingView.GetTitle.GetLesseeOrHolder.GetID ), HoldingView.GetTitle.HasHolder)]"
-					texture = "gfx/interface/buttons/background_frame.dds"
+					texture = "gfx/interface/component_masks/mask_frame.dds"
 					spriteType = Corneredstretched
 					spriteborder = { 15 15 }
-					color = { 0.4 0.5 0.6 0.6 }
+					using = Color_Blue
+					alpha = 0.6
 					margin_bottom = 10
 					margin_left = 5
 
 					modify_texture = {
-						texture = "gfx/interface/tiles/tile_fade_mask.dds"
+						texture = "gfx/interface/component_masks/mask_fade_horizontal_right.dds"
 						blend_mode = alphamultiply
 						alpha = 0.9
 					}
 
 					modify_texture = {
-						texture = "gfx/interface/buttons/background_button_fade.dds"
+						texture = "gfx/interface/component_masks/mask_fade_vertical_up.dds"
 						blend_mode = alphamultiply
 					}
 				}
@@ -942,7 +946,6 @@ window = {
 							name = "toggle_find_vassal"
 							visible = "[And( And( And( ObjectsEqual( HoldingView.GetTitle.GetHolder, GetPlayer ), HoldingView.GetTitle.CanUseFindVassal( GetPlayer ) ), Not( HoldingView.GetTitle.IsBarony ) ), Not(HoldingView.GetTitle.IsLeasedOut))]"
 							text = "FIND_VASSAL_HEADER"
-							default_format = "#clickable"
 							onclick = "[HoldingView.ToggleFindVassalListWindow]"
 							tooltip = "FIND_VASSAL_BUTTON_HOLDING_VIEW_TOOLTIP"
 						}
@@ -951,7 +954,6 @@ window = {
 							name = "grant_to_local_noble"
 							visible = "[And( And( And( ObjectsEqual( HoldingView.GetTitle.GetHolder, GetPlayer ), HoldingView.GetTitle.CanUseFindVassal( GetPlayer ) ), HoldingView.GetTitle.IsBarony ), Not(HoldingView.GetTitle.IsLeasedOut))]"
 							text = "GRANT_TO_LOCAL_NOBLE_HEADER"
-							default_format = "#clickable"
 							onclick = "[HoldingView.CreateHolderForBarony]"
 							tooltip = "GRANT_TO_LOCAL_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP"
 						}
@@ -1292,7 +1294,7 @@ window = {
 
 								icon = {
 									name = "icon_fort"
-									texture = "gfx/interface/siege_window/fort_icon.dds"
+									texture = "gfx/interface/window_siege/fort_icon.dds"
 									size = { 30 25 }
 								}
 
@@ -1357,7 +1359,7 @@ window = {
 								name = "disabled"
 								visible = "[GUIBuildingItem.IsBuildingDisabled]"
 								size = { 20 20 }
-								texture = "gfx/interface/icons/icon_warning.dds"
+								texture = "gfx/interface/icons/symbols/icon_warning.dds"
 							}
 
 							icon = {
@@ -1365,7 +1367,7 @@ window = {
 								datacontext = "[HoldingView.GetHolder]"
 								visible = "[And(Not(HoldingView.GetHolding.IsEmpty),Not(HoldingView.GetHolding.IsValidForLesseeOrHolder))]"
 								size = { 20 20 }
-								texture = "gfx/interface/icons/icon_warning.dds"
+								texture = "gfx/interface/icons/symbols/icon_warning.dds"
 								tooltip = HOLDING_VIEW_WRONG_HOLDING_TYPE
 							}
 
@@ -1373,7 +1375,7 @@ window = {
 								name = "reduced_by_fixable_situation"
 								visible = "[GUIBuildingItem.IsBuildingDisabled]"
 								size = { 20 20 }
-								texture = "gfx/interface/icons/icon_warning.dds"
+								texture = "gfx/interface/icons/symbols/icon_warning.dds"
 							}
 						}
 
@@ -1876,14 +1878,14 @@ window = {
 														alwaystransparent = "[BuildingLevelItem.IsSelected]"
 
 														size = { 60 60 }
-														texture = "gfx/interface/icons/building_types/button_round.dds"
+														texture = "gfx/interface/buttons/button_round_big.dds"
 
 														tooltip = "[BuildingLevelItem.GetTooltip]"
 														using = tooltip_ne
 														tooltip_offset = { 40 0 }
 
 														background = {
-															texture = "gfx/interface/icons/building_types/building_status_circle.dds"
+															texture = "gfx/interface/window_county/building_status_circle.dds"
 															framesize = { 120 120 }
 															using = Master_Button_Modify_Texture
 
@@ -1904,7 +1906,7 @@ window = {
 															visible = "[BuildingLevelItem.IsSelected]"
 															parentanchor = bottom|hcenter
 															position = { 0 8 }
-															texture = "gfx/interface/icons/building_types/building_selected_arrow.dds"
+															texture = "gfx/interface/window_county/building_selected_arrow.dds"
 															size = { 18 12 }
 															using = Master_Button_Modify_Texture
 
@@ -1944,12 +1946,12 @@ window = {
 											tooltip = "[GUITrackItem.GetCurrentBuildingTooltip]"
 											using = tooltip_ws
 											size = { 60 60 }
-											texture = "gfx/interface/icons/building_types/button_round.dds"
+											texture = "gfx/interface/buttons/button_round_big.dds"
 											using = tooltip_ne
 											tooltip_offset = { 40 0 }
 
 											background = {
-												texture = "gfx/interface/icons/building_types/building_status_circle.dds"
+												texture = "gfx/interface/window_county/building_status_circle.dds"
 												framesize = { 120 120 }
 												using = Master_Button_Modify_Texture
 
@@ -1970,7 +1972,7 @@ window = {
 												visible = "[GUITrackItem.IsCurrentBuildingSelected]"
 												parentanchor = bottom|hcenter
 												position = { 0 8 }
-												texture = "gfx/interface/icons/building_types/building_selected_arrow.dds"
+												texture = "gfx/interface/window_county/building_selected_arrow.dds"
 												size = { 18 12 }
 												using = Master_Button_Modify_Texture
 
@@ -1978,6 +1980,10 @@ window = {
 													frame = 2
 												}
 											}
+										}
+
+										expand = {
+											visible = "[Not(And(GUITrackItem.HasCurrentBuilding, GUITrackItem.HasNextBuilding))]"
 										}
 
 										widget = {
@@ -2003,7 +2009,7 @@ window = {
 											down = "[GUITrackItem.IsNextBuildingSelected]"
 											alwaystransparent = "[GUITrackItem.IsNextBuildingSelected]"
 											size = { 60 60 }
-											texture = "gfx/interface/icons/building_types/button_round.dds"
+											texture = "gfx/interface/buttons/button_round_big.dds"
 											onclick = "[GUITrackItem.OnNextBuildingClick]"
 											tooltip = "[GUITrackItem.GetNextBuildingTooltip]"
 											using = tooltip_ne
@@ -2011,7 +2017,7 @@ window = {
 
 											background = {
 												visible = "[GUITrackItem.IsConstructing]"
-												texture = "gfx/interface/icons/building_types/building_status_circle.dds"
+												texture = "gfx/interface/window_county/building_status_circle.dds"
 												framesize = { 120 120 }
 												frame = 2
 												alpha = 0.5
@@ -2036,7 +2042,7 @@ window = {
 												visible = "[GUITrackItem.IsNextBuildingSelected]"
 												parentanchor = bottom|hcenter
 												position = { 0 8 }
-												texture = "gfx/interface/icons/building_types/building_selected_arrow.dds"
+												texture = "gfx/interface/window_county/building_selected_arrow.dds"
 												size = { 18 12 }
 												using = Master_Button_Modify_Texture
 
@@ -2089,7 +2095,7 @@ window = {
 														down = "[BuildingLevelItem.IsSelected]"
 														alwaystransparent = "[BuildingLevelItem.IsSelected]"
 														size = { 60 60 }
-														texture = "gfx/interface/icons/building_types/button_round.dds"
+														texture = "gfx/interface/buttons/button_round_big.dds"
 														onclick = "[BuildingLevelItem.OnClick]"
 														tooltip = "[BuildingLevelItem.GetTooltip]"
 														using = tooltip_ne
@@ -2108,7 +2114,7 @@ window = {
 															visible = "[BuildingLevelItem.IsSelected]"
 															parentanchor = bottom|hcenter
 															position = { 0 8 }
-															texture = "gfx/interface/icons/building_types/building_selected_arrow.dds"
+															texture = "gfx/interface/window_county/building_selected_arrow.dds"
 															size = { 18 12 }
 															using = Master_Button_Modify_Texture
 
@@ -2255,7 +2261,7 @@ window = {
 														icon = {
 															name = "cant_construct"
 															size = { 30 30 }
-															texture = "gfx/interface/icons/icon_warning.dds"
+															texture = "gfx/interface/icons/symbols/icon_warning.dds"
 															tooltip = "[GUITrackItem.GetSelectedBuildingBlockReasons]"
 															visible = "[Not(GUITrackItem.CanConstructSelectedBuilding)]"
 														}
@@ -2348,7 +2354,6 @@ window = {
 											button_standard = {
 												name = "back_button"
 												text = "BACK_LABEL"
-												default_format = "#clickable"
 												visible = "[And(EqualTo_int32(GUITrackItem.GetNextBuilding.GetLevel,'(int32)1'), Not(GUITrackItem.IsConstructing))]"
 												onclick = "[GUITrackItem.GoBack]"
 												oversound = "event:/SFX/UI/Generic/sfx_ui_generic_pointer_over"
@@ -2545,7 +2550,7 @@ window = {
 								name = "wrong_type"
 								visible = "[Not(HoldingTypeItem.IsValidForPlayer)]"
 								size = { 35 35 }
-								texture = "gfx/interface/icons/icon_warning.dds"
+								texture = "gfx/interface/icons/symbols/icon_warning.dds"
 								tooltip = HOLDING_SELECTION_VIEW_WRONG_HOLDING_TYPE
 							}
 						}
@@ -2586,7 +2591,7 @@ types CountyViewTypes
 				parentanchor = center
 				size = { 28 28 }
 				alpha = 0.7
-				texture = "gfx/interface/icons/icon_plus.dds"
+				texture = "gfx/interface/icons/symbols/icon_plus.dds"
 			}
 
 			icon_building = {
@@ -2662,7 +2667,7 @@ types CountyViewTypes
 				name = "reduced_by_fixable_situation"
 				visible = "[GUIBuildingItem.IsBuildingDisabled]"
 				size = { 25 25 }
-				texture = "gfx/interface/icons/icon_warning.dds"
+				texture = "gfx/interface/icons/symbols/icon_warning.dds"
 			}
 		}
 

@@ -11,7 +11,7 @@ window = {
 	movable = no
 	layer = middle
 
-	using = Background_Subwindow
+	using = Window_Background_Subwindow
 
 	state = {
 		name = _show

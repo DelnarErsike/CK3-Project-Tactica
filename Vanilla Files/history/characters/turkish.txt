@@ -11660,7 +11660,7 @@
 	dynasty = 1000101750
 	religion = ashari
 	culture = turkish #turkmen
-	father = 1230140
+	father = 1000230140
 	1080.1.1 = {
 		birth = yes
 	}

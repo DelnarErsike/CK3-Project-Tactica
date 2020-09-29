@@ -43,11 +43,12 @@ window = {
 		margin = { 0 26 }
 		margin_right = 20
 
+		using = Window_Background
+
 		widget = {
 			size = { 100% 100% }
 
-			using = Window_Background
-			using = Window_Decoration_Thin
+			# using = Window_Decoration_Thin
 
 			### WINDOW CONTENT
 			vbox = {
@@ -239,7 +240,7 @@ window = {
 											size = { 30 25 }
 
 											button_icon_highlight = {
-												datacontext = "[Character.GetLiege.GetActiveLawInGroupWithFlag( 'realm_law' )]"
+												datacontext = "[Character.GetActiveLawInGroupWithFlag( 'realm_law' )]"
 												size = { 35 35 }
 												parentanchor = center
 												texture = "[Law.GetIcon]"
@@ -317,15 +318,7 @@ window = {
 					layoutpolicy_vertical = expanding
 					visible = "[MyRealmWindow.IsShowingDomain]"
 
-					state = {
-						name = _show
-						using = Animation_FadeIn_Quick
-					}
-
-					state = {
-						name = _hide
-						alpha = 0
-					}
+					using = Animation_Tab_Switch
 
 					scrollbox = {
 						layoutpolicy_horizontal = expanding
@@ -348,19 +341,6 @@ window = {
 											background = {
 												using = Background_Area_Light
 											}
-
-											# background = {
-											# 	texture = "gfx/interface/tiles/tile_realm_pattern_01.dds"
-											# 	spriteType = Corneredtiled
-
-											# 	tintcolor = { 0.48 0.58 0.62 0.5 }
-											# 	using = Mask_Rough_Edges
-
-											# 	modify_texture = {
-											# 		texture = "gfx/interface/tiles/tile_fade_mask_inverted.dds"
-											# 		blend_mode = alphamultiply
-											# 	}
-											# }
 
 											hbox = {
 												spacing = 10
@@ -441,13 +421,13 @@ window = {
 																	texture = "[HoldingItem.GetHolding.GetIllustration]"
 
 																	modify_texture = {
-																		texture = "gfx/interface/tiles/tile_fade_mask.dds"
+																		texture = "gfx/interface/component_masks/mask_fade_horizontal_right.dds"
 																		blend_mode = alphamultiply
 																		rotate_uv = 180
 																	}
 
 																	modify_texture = {
-																		texture = "gfx/interface/tiles/tile_overlay_effect_02.dds"
+																		texture = "gfx/interface/component_overlay/overlay_effect.dds"
 																		blend_mode = overlay
 																	}
 																}
@@ -486,13 +466,13 @@ window = {
 																					margin_top = 0
 																					margin_bottom = 5
 
-																					texture = "gfx/interface/tiles/tile_title_bg_01.dds"
+																					texture = "gfx/interface/component_tiles/tile_title_bg_01.dds"
 																					spriteType = Corneredtiled
 																					spriteborder = { 40 8 }
 
 																					modify_texture = {
 																						name = "mask"
-																						texture = "gfx/interface/tiles/tile_fade_mask.dds"
+																						texture = "gfx/interface/component_masks/mask_fade_horizontal_right.dds"
 																						blend_mode = alphamultiply
 																					}
 																				}
@@ -656,7 +636,7 @@ window = {
 																				using = Mask_Rough_Edges
 
 																				modify_texture = {
-																					texture = "gfx/interface/effects/fade_right.dds"
+																					texture = "gfx/interface/component_masks/mask_fade_horizontal_extended.dds"
 																					blend_mode = alphamultiply
 																				}
 																			}
@@ -781,6 +761,18 @@ window = {
 							spacing = 5
 							layoutpolicy_horizontal = expanding
 
+							button_standard_clean = {
+								name = "all_governments"
+								size = { 60 33 }
+								default_format = "#low"
+
+								text = "MRW_GOVERNMENT_FILTER_ALL"
+								tooltip = "MRW_GOVERNMENT_FILTER_ALL_TT"
+								using = tooltip_above
+								down = "[Not(MyRealmWindow.HasGovernmentTypeFilter)]"
+								onclick = "[MyRealmWindow.ResetGovernmentTypeFilter]"
+							}
+
 							item = {
 								button_standard_clean = {
 									name = "small_government_filter"
@@ -817,6 +809,7 @@ window = {
 
 						blockoverride "scrollbox_content"
 						{
+							visible = "[GreaterThan_int32( MyRealmWindow.GetVassalCount, '(int32)0' )]"
 
 							fixedgridbox = {
 								layoutpolicy_horizontal = expanding
@@ -860,6 +853,13 @@ window = {
 							}
 							expand = {}
 						}
+
+						vbox = {
+							visible = "[EqualTo_int32( MyRealmWindow.GetVassalCount, '(int32)0' )]"
+							text_single = {
+								text = "NO_VASSALS_TO_DISPLAY"
+							}
+						}
 					}
 
 					vbox = {
@@ -887,7 +887,7 @@ window = {
 								}
 
 								hbox = {
-									
+
 									tooltip = "[GetPlayer.GetDreadBreakdown]"
 
 									icon = {
@@ -1263,6 +1263,7 @@ window = {
 
 												text_single = {
 													name = "heir_share"
+													datacontext = "[GetPlayer]"
 													visible = "[DataModelHasItems(TitleSuccessionItem.GetPartitionTitles)]"
 													layoutpolicy_horizontal = expanding
 
@@ -1289,7 +1290,7 @@ window = {
 																parentanchor = bottom|right
 																visible = [TitleItem.GetTitle.HasLaws]
 																size = { 10 10 }
-																texture = "gfx/interface/buttons/button_icons/menu.dds"
+																texture = "gfx/interface/icons/flat_icons/menu.dds"
 															}
 														}
 													}
@@ -1323,7 +1324,7 @@ window = {
 																	parentanchor = bottom|right
 																	size = { 25 25 }
 																	position = { 5 0 }
-																	texture = "gfx/interface/icons/icon_title_law.dds"
+																	texture = "gfx/interface/icons/title_status/icon_title_law.dds"
 																}
 															}
 														}
@@ -1408,7 +1409,6 @@ window = {
 
 									item = {
 										portrait_head = {
-											datacontext = "[CharacterRef.Get]"
 											name = "heir_portrait"
 										}
 									}
@@ -1470,19 +1470,15 @@ window = {
 														hbox = {
 															layoutpolicy_horizontal = expanding
 
-															button_standard = {
+															button_standard_select_arrow = {
 																name = "go_to_vote"
 																onclick = "[OpenSuccessionElectionWindowForTitle(Title.Self)]"
-
-																text = "MY_REALM_WINDOW_VOTE"
-																tooltip = "MY_REALM_WINDOW_VOTE_TOOLTIP"
-
-																button_select_arrow = {
-																	alwaystransparent = yes
-																	size = { 20 20 }
-																	parentanchor = right|vcenter
-																	position = { -5 0 }
+																
+																blockoverride "button_text"{
+																	text = "MY_REALM_WINDOW_VOTE"
 																}
+																
+																tooltip = "MY_REALM_WINDOW_VOTE_TOOLTIP"
 															}
 
 															expand = {}
@@ -1580,7 +1576,7 @@ window = {
 							icon = {
 								visible = "[MyRealmWindow.IsOverDomainLimit]"
 								size = { 25 25 }
-								texture = "gfx/interface/icons/icon_warning.dds"
+								texture = "gfx/interface/icons/symbols/icon_warning.dds"
 								tooltip = "[Character.GetDomainLimitTooltip]"
 							}
 
@@ -1634,7 +1630,7 @@ window = {
 							icon = {
 								visible = "[GreaterThan_int32( Character.GetNumVassalsTowardsLimit, Character.GetVassalLimit )]"
 								size = { 25 25 }
-								texture = "gfx/interface/icons/icon_warning.dds"
+								texture = "gfx/interface/icons/symbols/icon_warning.dds"
 								tooltip = "[Character.GetVassalLimitTooltip]"
 							}
 

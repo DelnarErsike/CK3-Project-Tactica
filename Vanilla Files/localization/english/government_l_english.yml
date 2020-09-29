@@ -99,7 +99,7 @@
  
  council_rights:0 "Council Rights"
  council_rights_none:0 "No $council_rights$"
- council_rights_none_desc:0 "#flavor The [vassal] is not granted any out-of-the-ordinary privileges when it comes to the [council]."
+ council_rights_none_desc:0 "#flavor The [vassal] is not granted any out-of-the-ordinary privileges when it comes to the [council].#!"
  council_rights_none_short:0 "None"
  council_rights_guaranteed:0 "$council_rights$ Guaranteed"
  council_rights_guaranteed_desc:0 "#emphasis #bold [vassal|E] Privilege:#!#!\nThe #high $force_onto_council$#! [interaction|E] can be used at will\n\n#flavor The [vassal] is granted special [council] privileges, and will expect a permanent seat on the [council]. Granting this privilege to too many [vassals] will eventually upset the [powerful_vassals] of the [realm|E].#!"

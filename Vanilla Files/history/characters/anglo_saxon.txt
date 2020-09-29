@@ -1482,7 +1482,7 @@
 	trait = education_learning_3
 	father = 7627 #Alfred the Great
 	mother = 306020 #Eahlswith Mucel
-	870.1.1 = {
+	877.1.1 = {
 		birth = "870.1.1"
 	}
 	929.6.7 = {
@@ -6703,6 +6703,56 @@
 		death = "1067.1.1"
 	}
 }
+
+252377 = {
+	name = "E_thelflE_d" #Lady of the Mercians
+	female = yes
+	dynasty = 100072
+	martial = 5
+	diplomacy = 5
+	intrigue = 5
+	stewardship = 9
+	religion = "catholic"
+	culture = "saxon"
+	trait = "education_learning_3"
+	father = 7627
+	870.1.1 = {
+		birth = yes
+	}
+	918.6.12 = {
+		death = yes
+	}
+}
+252378 = {
+	name = "E_thelgifu" #Abbess of Shaftesbury
+	female = yes
+	dynasty = 100072
+	religion = "catholic"
+	culture = "saxon"
+	trait = "education_learning_3"
+	father = 7627
+	875.1.1 = {
+		birth = yes
+	}
+	921.1.1 = {
+		death = yes
+	}
+}
+252379 = {
+	name = "E_thelweard" #son of Alfred the Great
+	dynasty = 100072
+	religion = "catholic"
+	culture = "saxon"
+	trait = "education_learning_3"
+	father = 7627
+	880.1.1 = {
+		birth = yes
+	}
+	922.10.16 = {
+		death = yes
+	}
+}
+
 anglo_saxon.1001 = {	#Fictional holder to allow barony placement.
 	name = "Sigeberht"
 	religion = catholic

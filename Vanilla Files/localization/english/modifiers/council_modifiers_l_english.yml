@@ -23,7 +23,7 @@
  task_collect_taxes_perk_bonus_modifier:0 "Tax Person" # should probably use the dynamic name (tax_man_perk_male_name/tax_man_perk_female_name) but our modifier names can't handle that currently because of the order of loading databases
  task_organize_levies_modifier:0 "Organizing Levies"
  marshal_task_levy_desertions_modifier:0 "Levy Desertions"
- marshal_task_levy_desertions_modifier_desc:0 "High demands and a heavy hand has led to large number of levy troops deserting from my armies."
+ marshal_task_levy_desertions_modifier_desc:1 "High demands and a heavy hand has led to large number of levy troops deserting from this character's armies."
 
  marshal_task_unused_farmland_modifier:0 "Unused Farmland"
  marshal_task_unused_farmland_modifier_desc:0 "Farmers have been recruited indiscriminately from this county, resulting in a lack of workers for large swathes of land."
@@ -83,9 +83,9 @@
 
 
  heir_easier_to_marry_off_modifier:0 "Extra Eligible Marriage Party"
- heir_easier_to_marry_off_modifier_desc:0 "Everyone is more likely to want to marry this person"
+ heir_easier_to_marry_off_modifier_desc:1 "Everyone is more likely to want to marry this character"
  child_easier_to_marry_off_modifier:0 "More Eligible Marriage Party"
- child_easier_to_marry_off_modifier_desc:0 "Everyone is more likely to want to marry this person"
+ child_easier_to_marry_off_modifier_desc:1 "Everyone is more likely to want to marry this character"
  practiced_manners_modifier:0 "Coached on Manners"
  practiced_manners_modifier_desc:0 "This character's manners are beyond reproach"
 
