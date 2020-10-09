@@ -1,0 +1,99 @@
+###############################################################################
+# Note: these options are used for command-line Git tools, but they are also by
+# certain, high-level GUI clients like Git Extensions and Fork.
+# It is better to have a specific option set explicitly to what we want than
+# to rely on the defaulting behavior to know to pick the right one (since the
+# auto-picker for text vs. binary just checks to see if there is a specific
+# byte pattern in the first N bytes to know which to select).
+###############################################################################
+
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+
+# Documents
+*.bibtex   text diff=bibtex
+*.doc	        diff=astextplain
+*.DOC	        diff=astextplain
+*.docx          diff=astextplain
+*.DOCX          diff=astextplain
+*.dot           diff=astextplain
+*.DOT           diff=astextplain
+*.pdf           diff=astextplain
+*.PDF           diff=astextplain
+*.rtf           diff=astextplain
+*.RTF	        diff=astextplain
+*.md       text
+*.tex      text diff=tex
+*.adoc     text
+*.textile  text
+*.mustache text
+*.csv      text
+*.tab      text
+*.tsv      text
+*.txt      text
+*.sql      text
+
+# Graphics
+*.bmp      binary
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.psd      binary
+*.tif      binary
+*.tiff     binary
+*.ico      binary
+# SVG treated as an asset (binary) by default.
+*.svg      text
+# If you want to treat it as binary,
+# use the following line instead.
+# *.svg    binary
+*.eps      binary
+
+# Scripts
+*.bash     text eol=lf
+*.fish     text eol=lf
+*.sh       text eol=lf
+# These are explicitly windows files and should use crlf
+*.bat      text eol=crlf
+*.cmd      text eol=crlf
+*.ps1      text eol=crlf
+
+# Serialisation
+*.json     text
+*.toml     text
+*.xaml     text
+*.xml      text
+*.yaml     text
+*.yml      text
+
+# Archives
+*.7z       binary
+*.gz       binary
+*.rar      binary
+*.tar      binary
+*.tgz      binary
+*.zip      binary
+*.ide      binary
+*.ide-wal  binary
+
+# Fonts
+*.ttf      binary
+*.eot      binary
+*.otf      binary
+*.woff     binary
+*.woff2    binary
+
+# Executables
+*.dll      binary
+*.exe      binary
+*.pdb      binary
+
+# Text files where line endings should be preserved
+*.patch    -text
+
+# Configs
+*.config   text
+*.lock     text -diff
