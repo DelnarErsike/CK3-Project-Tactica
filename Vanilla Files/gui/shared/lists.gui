@@ -1364,18 +1364,18 @@ types Lists
 								tooltipwidget = character_opinion_tooltip
 								blockoverride "ott_heading_text"
 								{
-									text = "[Character.GetOpinionHeadingText( CharacterWindow.GetCharacter.GetLiege )]"
+									text = "[Character.GetOpinionHeadingText( Character.GetLiege )]"
 								}
 
 								blockoverride "ott_opinion_value_text"
 								{
 									text = "[Character.GetOpinionOf( Character.GetLiege )|=]"
-									fonttintcolor = "[Character.GetOpinionOfTint( CharacterWindow.GetCharacter.GetLiege )]"
+									fonttintcolor = "[Character.GetOpinionOfTint( Character.GetLiege )]"
 								}
 
 								blockoverride "ott_opinion_breakdown_text"
 								{
-									text = "[Character.GetOpinionBreakdownText( CharacterWindow.GetCharacter.GetLiege )]"
+									text = "[Character.GetOpinionBreakdownText( Character.GetLiege )]"
 								}
 
 								text_single = {
