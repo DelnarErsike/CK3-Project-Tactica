@@ -207,14 +207,9 @@ types Lists
 													using = tooltip_se
 												}
 
-												blockoverride "glow"
+												blockoverride "glow_radius"
 												{
-													glow = {
-														visible = "[Or(Trait.IsGenetic(), Trait.IsInheritable())]"
-														color = { 0.4 0.5 0.65 1 }
-														glow_radius = 3
-														using = Glow_Standard
-													}
+													glow_radius = 3
 												}
 											}
 										}
@@ -383,6 +378,7 @@ types Lists
 		}
 	}
 
+
 	type widget_character_list_item_finder = widget {
 		datacontext = "[CharacterListItem.GetCharacter]"
 		size = { 200 94 }
@@ -402,7 +398,13 @@ types Lists
 		hbox = {
 			layoutpolicy_horizontal = expanding
 
-			portrait_head_small_cached = {}
+			vbox = {
+				layoutpolicy_vertical = expanding
+
+				portrait_head_small_cached = {}
+
+				expand = {}
+			}
 
 			block "button_content"
 			{
@@ -420,7 +422,7 @@ types Lists
 							layoutpolicy_horizontal = expanding
 							margin = { 0 3 }
 							margin_left = 5
-							margin_right = 5
+							margin_right = 10
 
 							background = {
 								using = Background_Area_Characterlist
@@ -488,71 +490,79 @@ types Lists
 							layoutpolicy_horizontal = expanding
 							layoutpolicy_vertical = expanding
 
-							# Dynasty
-							widget = {
-								size = { 45 40 }
+							vbox = {
+								layoutpolicy_horizontal = expanding
 
-								coa_house_small = {
-									datacontext = "[Character.GetHouse]"
-									parentanchor = center
-									scale = 0.7
-								}
-							}
+								block "additional_info_kill_list" {}
 
-							# Traits
-							hbox = {
-								layoutpolicy_vertical = expanding
-								margin = { 10 0 }
-								minimumsize = { 140 0 } #### needed for prison view
-
-								background = {
-									using = Background_Area_Dark
-									alpha = 0.5
-									margin = { 0 2 }
-								}
-
-								fixedgridbox = {
-									name = "traits_grid"
-									datamodel = "[CharacterListItem.GetTraits]"
-									datamodel_reuse_widgets = yes
-									flipdirection = yes
+								hbox = {
 									layoutpolicy_horizontal = expanding
-									layoutpolicy_vertical = expanding
-									addcolumn = 30
-									addrow = 28
 
-									block "gridbox_items"
-									{
-										datamodel_wrap = 4
-										maxverticalslots = 2
+									# Dynasty
+									widget = {
+										size = { 45 40 }
+
+										coa_house_small = {
+											datacontext = "[Character.GetHouse]"
+											parentanchor = center
+											scale = 0.7
+										}
 									}
 
-									item = {
-										icon_trait = {
-											visible = "[Trait.IsValid]"
+									# Traits
+									hbox = {
+										layoutpolicy_vertical = expanding
+										margin = { 10 0 }
+										minimumsize = { 140 0 } #### needed for prison view
 
-											blockoverride "icon_size"
+										background = {
+											using = Background_Area_Dark
+											alpha = 0.5
+											margin = { 0 2 }
+										}
+
+										fixedgridbox = {
+											name = "traits_grid"
+											datamodel = "[CharacterListItem.GetTraits]"
+											datamodel_reuse_widgets = yes
+											flipdirection = yes
+											layoutpolicy_horizontal = expanding
+											layoutpolicy_vertical = expanding
+											addcolumn = 30
+											addrow = 28
+
+											block "gridbox_items"
 											{
-												size = { 30 30 }
+												datamodel_wrap = 4
+												maxverticalslots = 2
 											}
 
-											blockoverride "tooltip_placement"
-											{
-												using = tooltip_se
-											}
+											item = {
+												icon_trait = {
+													visible = "[Trait.IsValid]"
 
-											blockoverride "glow"
-											{
-												glow = {
-													visible = "[Or(Trait.IsGenetic(), Trait.IsInheritable())]"
-													color = { 0.4 0.5 0.65 1 }
-													glow_radius = 3
-													using = Glow_Standard
+													blockoverride "icon_size"
+													{
+														size = { 30 30 }
+													}
+
+													blockoverride "tooltip_placement"
+													{
+														using = tooltip_se
+													}
+
+													blockoverride "glow_radius"
+													{
+														glow_radius = 3
+													}
 												}
 											}
 										}
 									}
+
+									expand = {}
 								}
+
 							}
 
 							vbox = {
@@ -568,11 +578,12 @@ types Lists
 
 										widget_list_claims = {}
 
-										# Religion
+										# Religion and culture
 										hbox = {
 											layoutpolicy_horizontal = expanding
 											layoutpolicy_vertical = expanding
 											margin_left = 8
+											margin_right = 4
 											spacing = 5
 
 											background = {
@@ -625,9 +636,96 @@ types Lists
 		}
 	}
 
-	type dropDown_sort = dropDown {
+	type dropdown_menu_standard = dropDown {
+		block "dropdown_properties"
+		{
+			#datamodel = "[GetPlayer.GetCourt]"
+		}
+
+		block "dropdown_size"
+		{
+			size = { 200 32 }
+		}
+
+
+
+		active_item = {
+			container = {
+				alwaystransparent = no
+
+				button_drop = {
+					block "dropdown_size"
+					{
+						size = { 200 32 }
+					}
+					block "dropdown_active_item_properties"
+					{
+						text = "#D Current Option#!"
+					}
+					button_trigger = none
+
+
+				}
+			}
+		}
+
+		item = {
+			container = {
+				alwaystransparent = no
+
+				button_dropdown = {
+					block "dropdown_size"
+					{
+						size = { 200 32 }
+					}
+					button_trigger = none
+
+					block "dropdown_item_properties"
+					{
+						text = "#D Option#!"
+					}
+
+					default_format = "#clickable"
+				}
+			}
+		}
+
+		list = {
+			scrollarea = {
+				position = { 5 32 }
+				block "dropdown_list_maxsize"
+				{
+					maximumsize = { 192 250 }
+				}
+
+				block "dropdown_list_properties"
+				{
+
+				}
+
+				autoresizescrollarea = yes
+				scrollbarpolicy_horizontal = always_off
+
+				using = Background_DropDown
+
+				scrollwidget = {
+					dynamicgridbox = {
+						alwaystransparent = no
+					}
+				}
+
+				scrollbar_vertical = {
+					using = Scrollbar_Vertical
+				}
+			}
+		}
+	}
+
+	type dropdown_sort_characterlist = dropDown {
 		name = "sort_options"
-		size = { 225 33 }
+		block "size_button_drop" {   ########### only used for character finder
+			size = { 225 33 }
+		}
 
 		active_item = {
 			widget = {
@@ -645,7 +743,9 @@ types Lists
 		item = {
 			widget = {
 				alwaystransparent = no
-				size = { 215 33 }
+				block "size_dropdown" {
+					size = { 215 33 }
+				}
 
 				button_normal = {
 					size = { 100% 30 }
@@ -662,10 +762,14 @@ types Lists
 				}
 
 				button_dropdown = {
-					size = { 215 30 }
-					block "text_button_dropdown" {
+					block "size_dropdown" {
+						size = { 215 33 }
+					}
+					block "text_button_drop" {
 						text = "[CharacterListSortItem.GetName]"
 					}
+
+					default_format = "#clickable"
 				}
 			}
 		}
@@ -749,8 +853,6 @@ types Lists
 			using = Font_Size_Medium
 			align = center
 		}
-
-		tooltip = "CHARACTER_LIST_CLAIM_TOOLTIP"
 	}
 
 	type hbox_skills_grid = hbox {
@@ -788,7 +890,7 @@ types Lists
 
 	type hbox_list_sort_buttons = hbox {
 		name = "sort_buttons"
-		margin_left = 5
+		margin_left = 10
 		margin_right = 20
 		margin_top = 5
 		spacing = 5
@@ -813,6 +915,18 @@ types Lists
 			block "filters_visible" {}
 		}
 
+		divider_light = {
+			size = { 3 20 }
+		}
+
+		text_single = {
+			text = "SORT_BY"
+			align = nobaseline
+		}
+
+
+		dropdown_sort_characterlist = {}
+
 		button_standard = {
 			name = "sort_order"
 			size = { 25 25 }
@@ -821,29 +935,31 @@ types Lists
 			tooltip = "CHARACTER_SORT_BY"
 			using = tooltip_nw
 
-			icon = {
+			button_icon = {
 				alwaystransparent = yes
 				parentanchor = center
 				size = { 25 25 }
-				texture = "gfx/interface/buttons/button_sort_icon.dds"
-				framesize = { 33 33 }
+				texture = "gfx/interface/icons/flat_icons/sort_icon.dds"
+				framesize = { 66 66 }
 				frame = "[BoolTo1And2(CharacterSelectionList.GetSortOrder)]"
 			}
 		}
-
-		dropDown_sort = {}
 
 		expand = {}
 
 		block "skill_sort_buttons"
 		{
 			hbox = {
-				button_normal = {
+				button_standard_hover = {
 					name = "skill_diplomacy"
-					texture = "gfx/interface/icons/icon_skills.dds"
 					size = { 32 32 }
-					framesize = { 60 60 }
-					frame = 1
+
+					icon = {
+						texture = "gfx/interface/icons/icon_skills.dds"
+						size = { 32 32 }
+						framesize = { 60 60 }
+						frame = 1
+					}
 
 					onclick = "[CharacterSelectionList.SortBySkill('(int32)0')]"
 
@@ -852,20 +968,19 @@ types Lists
 
 					skillitem_sort_icon = {
 						visible = "[CharacterSelectionList.IsSortingBySkill('(int32)0')]"
-						frame = "[BoolTo1And2(CharacterSelectionList.GetSortOrder)]"
-						using = Master_Button_Modify_Texture
-						blockoverride "master_color_frame" {
-							frame = 4
-						}
 					}
 				}
 
-				button_normal = {
+				button_standard_hover = {
 					name = "skill_martial"
-					texture = "gfx/interface/icons/icon_skills.dds"
 					size = { 32 32 }
-					framesize = { 60 60 }
-					frame = 2
+
+					icon = {
+						texture = "gfx/interface/icons/icon_skills.dds"
+						size = { 32 32 }
+						framesize = { 60 60 }
+						frame = 2
+					}
 
 					onclick = "[CharacterSelectionList.SortBySkill('(int32)1')]"
 
@@ -874,20 +989,19 @@ types Lists
 
 					skillitem_sort_icon = {
 						visible = "[CharacterSelectionList.IsSortingBySkill('(int32)1')]"
-						frame = "[BoolTo1And2(CharacterSelectionList.GetSortOrder)]"
-						using = Master_Button_Modify_Texture
-						blockoverride "master_color_frame" {
-							frame = 4
-						}
 					}
 				}
 
-				button_normal = {
+				button_standard_hover = {
 					name = "skill_stewardship"
-					texture = "gfx/interface/icons/icon_skills.dds"
 					size = { 32 32 }
-					framesize = { 60 60 }
-					frame = 3
+
+					icon = {
+						texture = "gfx/interface/icons/icon_skills.dds"
+						size = { 32 32 }
+						framesize = { 60 60 }
+						frame = 3
+					}
 
 					onclick = "[CharacterSelectionList.SortBySkill('(int32)2')]"
 					tooltip = "SORT_BY_STEWARDSHIP"
@@ -895,20 +1009,19 @@ types Lists
 
 					skillitem_sort_icon = {
 						visible = "[CharacterSelectionList.IsSortingBySkill('(int32)2')]"
-						frame = "[BoolTo1And2(CharacterSelectionList.GetSortOrder)]"
-						using = Master_Button_Modify_Texture
-						blockoverride "master_color_frame" {
-							frame = 4
-						}
 					}
 				}
 
-				button_normal = {
+				button_standard_hover = {
 					name = "skill_intrigue"
-					texture = "gfx/interface/icons/icon_skills.dds"
 					size = { 32 32 }
-					framesize = { 60 60 }
-					frame = 4
+
+					icon = {
+						texture = "gfx/interface/icons/icon_skills.dds"
+						size = { 32 32 }
+						framesize = { 60 60 }
+						frame = 4
+					}
 
 					onclick = "[CharacterSelectionList.SortBySkill('(int32)3')]"
 					tooltip = "SORT_BY_INTRIGUE"
@@ -916,20 +1029,19 @@ types Lists
 
 					skillitem_sort_icon = {
 						visible = "[CharacterSelectionList.IsSortingBySkill('(int32)3')]"
-						frame = "[BoolTo1And2(CharacterSelectionList.GetSortOrder)]"
-						using = Master_Button_Modify_Texture
-						blockoverride "master_color_frame" {
-							frame = 4
-						}
 					}
 				}
 
-				button_normal = {
+				button_standard_hover = {
 					name = "skill_learning"
-					texture = "gfx/interface/icons/icon_skills.dds"
 					size = { 32 32 }
-					framesize = { 60 60 }
-					frame = 5
+
+					icon = {
+						texture = "gfx/interface/icons/icon_skills.dds"
+						size = { 32 32 }
+						framesize = { 60 60 }
+						frame = 5
+					}
 
 					onclick = "[CharacterSelectionList.SortBySkill('(int32)4')]"
 					tooltip = "SORT_BY_LEARNING"
@@ -937,11 +1049,6 @@ types Lists
 
 					skillitem_sort_icon = {
 						visible = "[CharacterSelectionList.IsSortingBySkill('(int32)4')]"
-						frame = "[BoolTo1And2(CharacterSelectionList.GetSortOrder)]"
-						using = Master_Button_Modify_Texture
-						blockoverride "master_color_frame" {
-							frame = 4
-						}
 					}
 				}
 			}
@@ -949,12 +1056,18 @@ types Lists
 	}
 
 	type skillitem_sort_icon = icon {
+		frame = "[BoolTo1And2(CharacterSelectionList.GetSortOrder)]"
 		alwaystransparent = yes
 		parentanchor = top|hcenter
-		position = { 0 -10 }
+		position = { 0 -14 }
 		texture = "gfx/interface/buttons/button_sort_toggle.dds"
 		framesize = { 36 36 }
 		size = { 18 18 }
+
+		using = Master_Button_Modify_Texture
+		blockoverride "master_color_frame" {
+			frame = 1
+		}
 	}
 
 	type vbox_character_list = vbox {
@@ -1202,14 +1315,9 @@ types Lists
 											using = tooltip_se
 										}
 
-										blockoverride "glow"
+										blockoverride "glow_radius"
 										{
-											glow = {
-												visible = "[Or(Trait.IsGenetic(), Trait.IsInheritable())]"
-												color = { 0.4 0.5 0.65 1 }
-												glow_radius = 3
-												using = Glow_Standard
-											}
+											glow_radius = 3
 										}
 									}
 								}
@@ -1243,14 +1351,9 @@ types Lists
 											using = tooltip_se
 										}
 
-										blockoverride "glow"
+										blockoverride "glow_radius"
 										{
-											glow = {
-												visible = "[Or(Trait.IsGenetic(), Trait.IsInheritable())]"
-												color = { 0.4 0.5 0.65 1 }
-												glow_radius = 3
-												using = Glow_Standard
-											}
+											glow_radius = 3
 										}
 									}
 								}
@@ -1454,23 +1557,9 @@ types Lists
 							align = nobaseline
 						}
 
-						text_single = {
-							visible = "[Character.IsPowerfulVassal]"
-							text = "-"
-							default_format = "#low"
-							align = nobaseline
-						}
-
-						text_single = {
-							visible = "[Character.IsPowerfulVassal]"
-							text = "MY_REALM_WINDOW_POWERFUL_VASSAL"
-							align = nobaseline
-						}
-
 						hbox = {
-							layoutpolicy_horizontal = expanding
 							spacing = 3
-							margin = { 10 0 }
+							margin = { 5 0 }
 
 							block "own_vassal"
 							{
@@ -1488,6 +1577,14 @@ types Lists
 								align = nobaseline
 								default_format = "#high"
 							}
+						}
+
+						text_single = {
+							visible = "[Character.IsPowerfulVassal]"
+							text = "MY_REALM_WINDOW_POWERFUL_VASSAL"
+							layoutpolicy_horizontal = expanding
+							align = nobaseline
+							autoresize = no
 						}
 
 						expand = {}

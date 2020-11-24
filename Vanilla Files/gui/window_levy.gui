@@ -65,12 +65,13 @@ window = {
 					expand = {}
 
 					text_label_right = {
-						margin_top = 5
-						margin_right = 15
 						text = "LV_UNRAISED"
-						align = right
 						using = Font_Size_Big
 						default_format = "#high"
+					}
+
+					spacer = {
+						size = {8 0}
 					}
 				}
 
@@ -152,7 +153,7 @@ window = {
 
 				text_single = {
 					name = "counters"
-					visible = "[RegimentType.FightsInMainPhase]"
+					visible = "[MenAtArmsType.FightsInMainPhase]"
 					layoutpolicy_horizontal = expanding
 					text = "LV_NO_COUNTERS"
 				}

@@ -6,17 +6,18 @@
  councillor_spymaster_modifier:0 "Liege's Spymaster"
  councillor_court_chaplain_modifier:0 "Liege's Court Chaplain"
 
- task_foreign_affairs_prestige_modifier:0 "Foreign Affairs"
+ task_foreign_affairs_prestige_modifier:1 "[foreign_affairs|E]"
  task_foreign_affairs_prestige_perk_bonus_modifier:0 "$adaptive_traditions_perk_name$"
  task_foreign_affairs_prestige_dynasty_perk_bonus_modifier:0 "$erudition_legacy_5_name$"
- task_foreign_affairs_opinion_modifier:0 "Foreign Affairs"
- task_domestic_affairs_opinion_moidifier:0 "Domestic Affairs"
+ task_foreign_affairs_opinion_modifier:1 "[foreign_affairs|E]"
+ task_domestic_affairs_opinion_moidifier:1 "[domestic_affairs|E]"
  
 
- court_chaplain_religious_relations_modifier:0 "Religious Relations"
+ court_chaplain_religious_relations_modifier:1 "[religious_relations|E]"
  court_chaplain_religious_relations_perk_bonus_modifier:0 "$clerical_justifications_perk_name$"
  court_chaplain_religious_relations_erudition_legacy_5_bonus_modifier:0 "$erudition_legacy_5_name$"
- court_chaplain_religious_relations_opinion_modifier:0 "Religious Relations"
+ court_chaplain_religious_relations_opinion_modifier:1 "[religious_relations|E]"
+ court_chaplain_religious_relations_no_hof_opinion_modifier:0 "$court_chaplain_religious_relations_opinion_modifier$"
  accomplished_forger_perk:0 "[GetPerk( 'accomplished_forger_perk' ).GetName( GetPlayer )]"
 
  task_collect_taxes_modifier:0 "Collecting Taxes"

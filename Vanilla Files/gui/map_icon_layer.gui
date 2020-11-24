@@ -44,12 +44,9 @@ widget = {
 		ignoreinvisible = yes
 		allow_outside = yes
 
-		using = Animation_ShowHide_Quick
-
 		widget = {
 			parentanchor = hcenter
 			allow_outside = yes
-			#visible = "[Or( ProvinceIcon.HasCombat, ProvinceIcon.HasCharacter )]"
 
 			flowcontainer = {
 				parentanchor = bottom|hcenter
@@ -58,15 +55,20 @@ widget = {
 				allow_outside = yes
 
 				widget_combat_icon = {
-					visible = "[ProvinceIcon.HasCombat]"
+					visible = "[And(ProvinceIcon.HasCombat, Not(And(CombatMapIcon.RightIsNeutral, CombatMapIcon.LeftIsNeutral)))]"
 					parentanchor = hcenter
 					allow_outside = yes
 
-					#using = Animation_MapIcon_Fade
-					#blockoverride "icon_size"
-					#{
 					size = { 234 45 }
-					#}
+				}
+
+				#### NEUTRAL VERSION ####
+				widget_combat_icon_small = {
+					visible = "[And(ProvinceIcon.HasCombat, And(CombatMapIcon.RightIsNeutral, CombatMapIcon.LeftIsNeutral))]"
+					parentanchor = hcenter
+					allow_outside = yes
+
+					size = { 234 45 }
 				}
 
 				widget_character_icon = {
@@ -74,6 +76,11 @@ widget = {
 					visible = "[ProvinceIcon.HasCharacter]"
 					parentanchor = hcenter
 					allow_outside = yes
+				}
+
+				spacer = {
+					visible = "[Or(Or(ProvinceIcon.HasSiege, ProvinceIcon.HasRaid), ProvinceIcon.HasBeenRaided)]"
+					size = { 0 55 }
 				}
 			}
 		}
@@ -462,14 +469,26 @@ widget = {
 	datacontext = "[GuiHolySiteItem.GetHolySite]"
 
 	background = {
-		texture = "gfx/interface/component_masks/mask_fade_circle.dds"
-		color = { 0.1 0.1 0.1 1 }
-		margin = { 10 10 }
-		alpha = 0.6
+		alpha = 0
+		texture = "gfx/interface/component_masks/mask_circle.dds"
+		margin = { -10 -10 }
+
+		glow = {
+			color = { 0.2 0.2 0.2 0.5 }
+			glow_radius = 10
+
+			glow_generation_rules= {
+				glow_max_radius = 40
+				glow_alpha_mask = 0
+				glow_blur_passes = 10
+				glow_texture_downscale = 5.5f
+				glow_ignore_inside_pixels = yes
+			}
+		}
 	}
 
 	button_normal = {
-		name = "council_task"
+		name = "faith_icon"
 		texture = "[GuiHolySiteItem.GetFaith.GetIcon]"
 		size = { 60 60 }
 		onclick = "[HolySite.GetBarony.SelectTitle]"
@@ -705,43 +724,8 @@ types MapIcons
 		}
 	}
 
-	type coa_realm_map_huge = widget {
-		size = { 95 150 }
-
-		animations_map_coa = {
-			name = "animations"
-			parentanchor = center
-			position = { 0 -35 }
-			size = { 162 162 }
-		}
-
-		icon = {
-			name = "ally_war_icon"
-			visible = "[CapitalMapIcon.IsMyAlly]"
-			parentanchor = center
-			position = { -8 -45 }
-
-			size = { 84 84 }
-			texture = "gfx/interface/icons/map_coa/icon_ally.dds"
-		}
-
-		icon = {
-			name = "at_war_icon"
-			visible = "[CapitalMapIcon.IsAtWarWithMe]"
-			parentanchor = center
-			position = { 0 -60 }
-
-			size = { 90 36 }
-			texture = "gfx/interface/icons/map_coa/icon_at_war.dds"
-		}
-
-		coa_realm_big_crown = {
-			parentanchor = center
-		}
-	}
-
 	type coa_realm_map_big = widget {
-		size = { 65 105 }
+		size = { 70 110 }
 
 		container = {
 			parentanchor = center
@@ -782,10 +766,23 @@ types MapIcons
 				name = "at_war_icon"
 				visible = "[CapitalMapIcon.IsAtWarWithMe]"
 				parentanchor = center
-				position = { 0 -40 }
+				position = { 0 -20 }
+				size = { 80 80 }
+				texture = "gfx/interface/icons/map_coa/icon_at_war_big.dds"
+			}
 
-				size = { 72 28 }
-				texture = "gfx/interface/icons/map_coa/icon_at_war.dds"
+
+			icon = {
+				name = "player_icon"
+				visible = "[Or(CapitalMapIcon.GetOwner.IsLocalPlayer, CapitalMapIcon.GetOwner.IsOtherPlayer)]"
+
+				texture = "gfx/interface/icons/map_coa/icon_player.dds"
+				framesize = { 156 156 }
+				frame = 4
+
+				position = { 0 -10 }
+				size = { 100 100 }
+				parentanchor = center
 			}
 
 			coa_realm_medium_crown = {
@@ -795,7 +792,8 @@ types MapIcons
 	}
 
 	type coa_realm_map_medium = widget {
-		size = { 55 75 }
+		size = { 55 80 }
+
 
 		container = {
 			parentanchor = center
@@ -837,10 +835,22 @@ types MapIcons
 				name = "at_war_icon"
 				visible = "[CapitalMapIcon.IsAtWarWithMe]"
 				parentanchor = center
-				position = { 0 -35 }
+				position = { 0 -20 }
+				size = { 55 55 }
+				texture = "gfx/interface/icons/map_coa/icon_at_war_big.dds"
+			}
 
-				size = { 62 24 }
-				texture = "gfx/interface/icons/map_coa/icon_at_war.dds"
+			icon = {
+				name = "player_icon"
+				visible = "[Or(CapitalMapIcon.GetOwner.IsLocalPlayer, CapitalMapIcon.GetOwner.IsOtherPlayer)]"
+
+				texture = "gfx/interface/icons/map_coa/icon_player.dds"
+				framesize = { 156 156 }
+				frame = 3
+
+				position = { 0 -14 }
+				size = { 72 72 }
+				parentanchor = center
 			}
 
 			coa_realm_small_crown = {
@@ -874,10 +884,22 @@ types MapIcons
 			name = "at_war_icon"
 			visible = "[CapitalMapIcon.IsAtWarWithMe]"
 			parentanchor = center
-			position = { 0 -22 }
+			position = { 0 -5 }
+			size = { 40 40 }
+			texture = "gfx/interface/icons/map_coa/icon_at_war_big.dds"
+		}
 
-			size = { 45 18 }
-			texture = "gfx/interface/icons/map_coa/icon_at_war.dds"
+		icon = {
+			name = "player_icon"
+			visible = "[Or(CapitalMapIcon.GetOwner.IsLocalPlayer, CapitalMapIcon.GetOwner.IsOtherPlayer)]"
+
+			texture = "gfx/interface/icons/map_coa/icon_player.dds"
+			framesize = { 156 156 }
+			frame = 2
+
+			position = { 0 -7 }
+			size = { 48 48 }
+			parentanchor = center
 		}
 
 		coa_realm_tiny_crown = {
@@ -909,6 +931,7 @@ types MapIcons
 		flowcontainer = {
 			parentanchor = hcenter
 			allow_outside = yes
+			margin_top = -6
 
 			container = {
 				name = "name_banner"
@@ -920,24 +943,46 @@ types MapIcons
 					spriteborder = { 72 0 }
 					spriteborder_right = 114
 					texture_density = 4
-
-					position = { 5 -7 }
 					using = Holding_Mouse_Entry
 				}
 
-				text_single = {
-					name = "tutorial_highlight_capital_holding"
-					snap_to_pixels = no
-					position = { -1 -5 }
-					margin_top = 5
+				flowcontainer = {
 					margin_left = 45
-					margin_right = 33
+					ignoreinvisible = yes
 
-					text = "[ProvinceIcon.GetTitle.GetNameNoTierNoTooltip]"
-					default_format = "#high;glow_color:{0.1,0.1,0.1,1.0}"
-					using = Font_Type_Flavor
-					fontsize = 17
+					text_single = {
+						name = "tutorial_highlight_capital_holding"
+						snap_to_pixels = no
+						margin_top = 8
+
+						text = "[ProvinceIcon.GetTitle.GetNameNoTierNoTooltip]"
+						default_format = "#high;glow_color:{0.1,0.1,0.1,1.0}"
+						using = Font_Type_Flavor
+						fontsize = 17
+					}
+
+					widget = {
+						size = { 70 33 }
+						tooltip = "REALM_CAPITAL_TOOLTIP"
+						visible = "[Holding.GetProvince.IsRealmCapital]"
+
+						icon = {
+							name = "realm_capital_icon"
+							parentanchor = left|vcenter
+							position = { 0 1 }
+							size = { 38 38 }
+							framesize = { 63 63 }
+							texture = "gfx/interface/icons/icon_capital.dds"
+							frame = 2
+						}
+					}
+
+					spacer = {
+						size = { 45 33 }
+						visible = "[Not(Holding.GetProvince.IsRealmCapital)]"
+					}
 				}
+
 			}
 
 			widget = {
@@ -1048,7 +1093,7 @@ types MapIcons
 
 			background = {
 				texture = "gfx/interface/component_masks/mask_fade_circle.dds"
-				color = { 0.1 0.1 0.1 1 }				
+				color = { 0.1 0.1 0.1 1 }
 				margin = { 50 0 }
 				margin_top = 15
 				margin_bottom = 20
@@ -1289,7 +1334,7 @@ types MapIcons
 						size = { 35 35 }
 					}
 				}
-				
+
 				icon = {
 					name = "activity_button_with_window"
 					visible = "[ActivityMapItem.GetActivity.GetType.HasActivityWindow]"
@@ -1568,6 +1613,147 @@ types MapIcons
 			}
 		}
 	}
+
+	type widget_combat_icon_small = widget {
+		name = "combat_widget"
+		datacontext = "[ProvinceIcon.GetCombatIcon]"
+		datacontext = "[CombatMapIcon.GetCombat]"
+
+		button_group = {
+			parentanchor = hcenter
+			onclick = "[CombatMapIcon.OnClick]"
+			tooltip = "COMBAT_ON_MAP_TOOLTIP"
+			using = tooltip_below
+
+			background = {
+				using = Background_Area_Light
+				spriteType = Corneredtiled
+				spriteborder = { 20 5 }
+				margin = { 10 3 }
+				margin_top = -10
+			}
+
+			container = {
+				position = { 0 6 }
+
+				button_normal = {
+					name = "left_side_bg_neutral"
+					texture = "gfx/interface/icons/map_icons/army_bg_neutral.dds"
+					size = { 82 27 }
+					framesize = { 164 54 }
+					frame = 4
+				}
+			}
+
+			container = {
+				position = { 80 6 }
+
+				button = {
+					name = "right_side_bg_neutral"
+					texture = "gfx/interface/icons/map_icons/army_bg_neutral.dds"
+					mirror = horizontal
+					size = { 82 27 }
+					framesize = { 164 54 }
+					frame = 4
+				}
+			}
+
+			progressbar = {
+				name = "power_progressbar"
+				parentanchor = top|hcenter
+				position = { 0 30 }
+				size = { 156 10 }
+				progresstexture = "gfx/interface/progressbars/onmap_progress_blue.dds"
+
+				noprogresstexture = "gfx/interface/progressbars/onmap_progress_red.dds"
+				value = "[Combat.GetPowerSlider]"
+				direction = horizontal
+				alwaystransparent = yes
+			}
+
+			button = {
+				name = "combat_icon"
+				parentanchor = center
+				alwaystransparent = no
+				texture = "gfx/interface/icons/map_icons/combat_map_icon.dds"
+				size = { 40 40 }
+			}
+		}
+
+		background = {
+			name = "unit_highlight"
+			visible = "[CombatMapIcon.IsSelected]"
+			texture = "gfx/interface/icons/map_icons/army_selected.dds"
+			spriteType = Corneredtiled
+			spriteborder = { 20 5 }
+			margin_left = -34
+			margin_right = -24
+			margin_top = -7
+			margin_bottom = -3
+		}
+
+		coa_realm_tiny = {
+			name = "left_realm_flag"
+			parentanchor = hcenter
+			position = { -88 3 }
+			datacontext = "[Combat.GetLeftSideResult.GetMainParticipant]"
+			using = tooltip_below
+		}
+
+		coa_realm_tiny = {
+			name = "right_realm_flag"
+			parentanchor = hcenter
+			position = { 88 3 }
+			datacontext = "[Combat.GetRightSideResult.GetMainParticipant]"
+			using = tooltip_below
+		}
+
+		flowcontainer = {
+			parentanchor = hcenter
+			position = { -42 5 }
+
+			text_single = {
+				name = "soldiers_left"
+				parentanchor = vcenter
+				text = "[Combat.GetLeftSide.GetCurrentFightingMen|0]"
+				default_format = "#high;glow_color:{0.1,0.1,0.1,1.0}"
+				snap_to_pixels = no
+				max_width = 40
+				fontsize_min = 12
+			}
+
+			icon = {
+				name = "unit_quality_left"
+				texture = "gfx/interface/icons/army_quality_icon.dds"
+				framesize = { 32 32 }
+				size = { 22 22 }
+				frame = "[Combat.GetLeftSide.GetComposition.CalcQualityLevel]"
+			}
+		}
+
+		flowcontainer = {
+			parentanchor = hcenter
+			position = { 45 5 }
+
+			text_single = {
+				name = "soldiers_right"
+				text = "[Combat.GetRightSide.GetCurrentFightingMen|0]"
+				default_format = "#high;glow_color:{0.1,0.1,0.1,1.0}"
+				snap_to_pixels = no
+				max_width = 40
+				fontsize_min = 12
+			}
+
+			icon = {
+				name = "unit_quality_right"
+				texture = "gfx/interface/icons/army_quality_icon.dds"
+				framesize = { 32 32 }
+				size = { 22 22 }
+				frame = "[Combat.GetRightSide.GetComposition.CalcQualityLevel]"
+			}
+		}
+	}
+
 
 	type flowcontainer_unit_items = flowcontainer {
 		datacontext = "[ProvinceIcon.GetUnitIcon]"

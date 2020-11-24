@@ -13,6 +13,18 @@ window = {
 	using = Window_Background
 	using = Window_Decoration
 
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+		using = Sound_WindowShow_Standard
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+		using = Sound_WindowHide_Standard
+	}
+
 	vbox = {
 		name = "window_content"
 		layoutpolicy_vertical = expanding
@@ -21,7 +33,7 @@ window = {
 
 		using = Window_Margins
 
-		header_pattern = {
+		header_pattern_interaction = {
 			layoutpolicy_horizontal = expanding
 
 			blockoverride "header_text"

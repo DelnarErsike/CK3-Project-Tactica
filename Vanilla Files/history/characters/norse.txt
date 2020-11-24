@@ -497,6 +497,9 @@
 	trait = education_martial_4
 	815.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 	865.1.1 = {
 		effect = {
@@ -652,6 +655,9 @@
 	mother = 40697
 	830.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 	866.1.1 = {
 		add_spouse = 6863
@@ -1860,7 +1866,7 @@
 	955.1.1 = {
 		birth = "955.1.1"
 	}
-	995.1.2 = {
+	995.1.10 = {
 		add_spouse = 102501
 	}
 	1018.1.8 = {
@@ -2403,13 +2409,16 @@
 	father = 5994
 	mother = 5995
 	1009.1.1 = {
-		birth = "1009.1.1"
+		birth = yes
 	}
 	1040.1.1 = {
 		add_spouse = 102505
 	}
+	1060.1.1 = {
+		remove_spouse = 102505 # Added for simplicity - Was actually married until death
+	}
 	1064.1.1 = {
-		death = "1064.1.1"
+		death = yes
 	}
 }
 
@@ -2891,10 +2900,10 @@
 		}
 	}
 	872.1.1 = {
-		add_spouse = 166044
+		add_concubine = 166044
 	}
 	893.1.1 = {
-		add_spouse = 161305
+		add_concubine = 161305
 	}
 	
 	933.1.1 = {
@@ -3452,6 +3461,9 @@
 	
 	826.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 	838.1.1 = {
 		add_spouse = 6839
@@ -3605,6 +3617,9 @@
 	840.1.1 = {
 		birth = yes
 		give_nickname = nick_snake_in_the_eye
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 
 	856.1.1 = {
@@ -3713,6 +3728,9 @@
 	
 	820.2.7 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 	836.1.1 = {
 		add_spouse = 306011 #Fictional
@@ -3862,6 +3880,9 @@
 	828.1.1 = {
 		give_nickname = nick_whiteshirt
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 	843.1.1 = {
 		add_spouse = 306009 #Fictional wife

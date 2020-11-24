@@ -519,8 +519,10 @@
 			}
 		}
 	}
-	1066.1.1 = {
+	1064.12.1 = {
 		remove_spouse = 131
+	}
+	1066.1.1 = {
 		add_spouse = 123 #Ealdgyth of Mercia
 		effect = {
 			reverse_add_opinion = {
@@ -1451,6 +1453,9 @@
 	mother = 306023 #Osburh
 	849.1.1 = {
 		birth = yes
+		effect = {
+			add_character_flag = has_scripted_appearance
+		}	
 	}
 	859.1.1 = {
 		effect = {
